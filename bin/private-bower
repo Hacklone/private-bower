@@ -5,9 +5,12 @@ var PackageStore = require('../lib/private-bower');
 var argv = require('optimist').argv;
 var colors = require('colors');
 var path = require('path');
+var http = require('http');
 
 var express = require('express');
 var app = express();
+
+var _publicBowerUrl = 'http://bower.herokuapp.com/packages/';
 
 var _port, _persistFilePath, _packageStore;
 
@@ -85,7 +88,7 @@ function _initService() {
     });
 
     //bower service
-    app.get('/packages/:name', function(req, res) {console.log(req);
+    app.get('/packages/:name', function(req, res) {
         var repo = _packageStore.packages[req.params.name];
 
         if(repo) {
@@ -96,6 +99,30 @@ function _initService() {
             });
         }
         else {
+            _callPublicBower();
+        }
+
+        function _callPublicBower() {
+            http.get(_publicBowerUrl + req.params.name, function(response) {
+                    var body = '';
+
+                    response.on('data', function(chunk) {
+                        body += chunk;
+                    });
+
+                    response.on('end', function() {
+                        if(body.indexOf('Not Found') !== -1) {
+                            _notFound();
+                        }
+                        else {
+                            res.send(body);
+                        }
+                    });
+                })
+                .on('error', _notFound);
+        }
+
+        function _notFound() {
             res.status(404).send('Not found');
         }
     });
