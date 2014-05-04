@@ -16,6 +16,10 @@ Optional Parameters
 
 #Usage
 
+##Project
+Create .bowerrc file with content:
+> { "registry": "http://yourPrivateBowerRepo:5678" }
+
 ##List packages
 GET
 > bower-server:5678/packages
