@@ -1,7 +1,8 @@
 private-bower
 =============
 
-A simple private bower registry
+A simple private bower registry for private package handling.
+If there's no private package with requested package name the servers calls through to the public bower registry.
 
 #Installion
 
