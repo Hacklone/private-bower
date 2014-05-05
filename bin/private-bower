@@ -51,7 +51,7 @@ function _initService() {
         res.send('ok');
     });
 
-    app.post('/registerPackage', function(req, res) {
+    app.post('/registerPackages', function(req, res) {
         _packageStore.registerPackages(req.body.packages);
 
         _log('registered several packages');
