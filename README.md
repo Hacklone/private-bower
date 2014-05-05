@@ -16,6 +16,9 @@ Run
 Optional Parameters
 > private-bower -p 5678 -o "output file path"
 
+Migrate from older .xml version to .json version
+> private-bower --migrate "youroldXML(default bowerRepository.xml)"
+
 #Usage
 
 ##Project

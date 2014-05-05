@@ -1,6 +1,6 @@
 {
     "name": "private-bower",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "author": "Hacklone <toakak@gmail.com>",
     "description": "A simple private bower registry",
     "main": "./lib/private-bower",
@@ -21,7 +21,6 @@
         "colors": "0.6.x",
         "optimist": "0.5.x",
         "express": "3.x.x",
-        "js2xmlparser": "0.1.x",
         "xml2js": "0.4.x"
     },
     "bugs": {

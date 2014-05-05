@@ -16,20 +16,23 @@ var _port, _persistFilePath, _packageStore;
 
 _init();
 function _init() {
-    if (argv.h || argv.help) {
-        console.log([
-            'usage: private-bower [options]',
-            '',
-            'options:',
-            '  -p                 Port to use [5678]',
-            '  -o                 Repository persist file [bowerRepository.xml]',
-            '  -h --help          Print this list and exit.'
-        ].join('\n'));
+    if(argv.h || argv.help) {
+        _logHelp();
+
+        process.exit();
+    }
+    else if(argv.migrate) {
+        require('../lib/migrator').migrate(argv.migrate);
+
         process.exit();
     }
 
     _port = argv.p || argv.port || 5678;
-    _persistFilePath = argv.o || argv.output || path.join(__dirname, 'bowerRepository.xml');
+    _persistFilePath = argv.o || argv.output || path.join(__dirname, 'bowerRepository.json');
+
+    if(path.extname(_persistFilePath) === '.xml') {
+        _log('Warning: xml persist format is deprecated please use --migrate to migrate to a new format'.yellow);
+    }
 
     _packageStore = new PackageStore({
         persistFilePath: _persistFilePath
@@ -79,7 +82,7 @@ function _initService() {
             if(_packageStore.packages.hasOwnProperty(packageName)) {
                 packages.push({
                     name: packageName,
-                    repo: _packageStore.packages[packageName]
+                    repo: _packageStore.packages[packageName].repo
                 });
             }
         }
@@ -89,12 +92,12 @@ function _initService() {
 
     //bower service
     app.get('/packages/:name', function(req, res) {
-        var repo = _packageStore.packages[req.params.name];
+        var package = _packageStore.packages[req.params.name];
 
-        if(repo) {
+        if(package) {
             res.send({
                 "name": req.params.name,
-                "url": repo,
+                "url": package.repo,
                 "hits": 1
             });
         }
@@ -136,3 +139,14 @@ function _log(text) {
     console.log('[bower] '.green, text);
 }
 
+function _logHelp() {
+    console.log([
+        'usage: private-bower [options]',
+        '',
+        'options:',
+        '  -p                 Port to use [5678]',
+        '  -o                 Repository persist file [bowerRepository.json]',
+        '  --migrate          Migrates from xml file format to json',
+        '  -h --help          Print this list and exit.'
+    ].join('\n'));
+}
