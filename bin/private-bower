@@ -31,7 +31,9 @@ function _init() {
     _persistFilePath = argv.o || argv.output || path.join(__dirname, 'bowerRepository.json');
 
     if(path.extname(_persistFilePath) === '.xml') {
-        _log('Warning: xml persist format is deprecated please use --migrate to migrate to a new format'.yellow);
+        _log('Warning: xml persist format is deprecated please use --migrate to migrate to a new format'.red);
+
+        process.exit();
     }
 
     _packageStore = new PackageStore({
