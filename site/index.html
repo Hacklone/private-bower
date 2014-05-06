@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="PrivateBower">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Private Bower Registry</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
+    <link rel="stylesheet" href="private-bower.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+
+    <script src="private-bower.js"></script>
+</head>
+<body ng-controller="mainController">
+    <div id="wrap">
+        <div class="jumbotron">
+            <a class="hidden-xs animated fadeInRight" href="https://github.com/Hacklone/private-bower">
+                <img style="position: absolute; top: 0; right: 0; border: 0; cursor: pointer;"
+                     src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
+                     alt="Fork me on GitHub">
+            </a>
+
+            <div class="container text-center animated fadeInDown">
+                <h1>Private Bower</h1>
+                <div style="position: relative;">
+                    <span class="glyphicon glyphicon-search" style="position: absolute;"></span>
+                    <input ng-model="packageFilter" class="form-control search" placeholder="Search package">
+                </div>
+                <div style="margin-top: 10px;">
+                    <a href="http://github.com/Hacklone/private-bower/blob/master/README.md"
+                       target="_blank" class="btn btn-default">
+                        Docs
+                    </a>
+                    <a href="http://bower.io/search/" target="_blank" class="btn btn-warning">
+                        Public Packages
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container animated fadeInUp">
+            <div ng-if="error" class="bg-danger info-box">
+                <span class="glyphicon glyphicon-remove"></span>
+                Private Bower service is down
+            </div>
+            <div ng-if="packages && !packages.length" class="bg-warning info-box">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                No private packages registered
+                <a href="http://github.com/Hacklone/private-bower/blob/master/README.md" target="_blank">
+                    read docs about how to register packages.
+                </a>
+            </div>
+            <div ng-if="!packages" class="bg-info info-box">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                Loading Packages...
+            </div>
+            <div ng-if="packages && packages.length">
+                <div ng-repeat="package in packages | filter:{ name: packageFilter }" class="package">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>
+                                <a href="{{ package.repo.replace('git:', 'http:') }}" target="_blank">
+                                    {{ package.name }}
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="col-md-8">
+                            <div style="margin-top: 5px;">
+                               {{ package.repo }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h2>Created by</h2>
+
+        <div class="bg-gray">
+            <div class="author">
+                <div>
+                    <a href="https://github.com/Hacklone" target="_blank" title="LinkedIn: Barna Tóth">
+                        <img src="https://avatars1.githubusercontent.com/u/2377220?s=460" class="img-circle" alt="BarnaToth">
+                    </a>
+                </div>
+                <div>
+                    <h4>
+                        <a href="https://github.com/Hacklone" analytics-category="Footer-Team" analytics-label="Barna-Link" analytics-on="click" target="_blank" title="LinkedIn: Barna Tóth">
+                            Barna Tóth
+                        </a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

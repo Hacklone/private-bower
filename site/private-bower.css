@@ -1,0 +1,123 @@
+body, html {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px;
+    padding-bottom: 60px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    height: 50px;
+
+    background-color: #777;
+
+    text-align: center;
+
+    padding: 5px 0;
+    box-sizing: border-box;
+}
+
+footer img {
+    height: 80px;
+}
+
+footer .author {
+    display: inline-block;
+    max-width: 200px;
+}
+
+footer h2 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+footer h4 a {
+    color: #b3fcfa;
+}
+
+.bg-gray {
+    background-color: #777;
+}
+
+.info-box {
+    max-width: 750px;
+    margin: 10px auto;
+
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.jumbotron {
+    background-color: #1695A3;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.jumbotron h1, h2 {
+    color: #ffffff;
+
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+}
+
+.glyphicon-search {
+    position: absolute;
+
+    margin-left: 10px;
+    margin-top: 20px;
+    color: #444;
+}
+
+.search {
+    display: inline-block;
+
+    width: 70%;
+    max-width: 750px;
+
+    margin-top: 10px;
+
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
+.glyphicon {
+    margin-right: 10px;
+}
+
+.package {
+    max-width: 750px;
+    margin: 10px auto;
+
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+}
+
+.package h3 {
+    margin: 0;
+}
+
+.package.ng-enter {
+    -webkit-animation: fadeInRight 0.25s;
+    -moz-animation: fadeInRight 0.25s;
+    -ms-animation: fadeInRight 0.25s;
+    -o-animation: fadeInRight 0.25s;
+    animation: fadeInRight 0.25s;
+}
+
+.package.ng-leave {
+    -webkit-animation: fadeOutLeft 0.25s;
+    -moz-animation: fadeOutLeft 0.25s;
+    -ms-animation: fadeOutLeft 0.25s;
+    -o-animation: fadeOutLeft 0.25s;
+    animation: fadeOutLeft 0.25s;
+}

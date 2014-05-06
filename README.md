@@ -3,7 +3,14 @@ private-bower
 
 A simple private bower registry for private package handling.
 
-If there's no private package with requested package name the servers calls through to the public bower registry.
+#Features
+
+*   Register private packages
+*   Fallback to public packages
+*   Web UI
+
+_Features to come:
+Web UI management, Cache public bower registry, ..._
 
 #Installion
 
@@ -19,7 +26,13 @@ Optional Parameters
 Migrate from older .xml version to .json version
 > private-bower --migrate "youroldXML(default bowerRepository.xml)"
 
+If there's no private package with requested package name the servers calls through to the public bower registry.
+
 #Usage
+
+##Web interface
+Convenient way for viewing your packages in a browser
+> http://localhost:5678/
 
 ##Project
 Create .bowerrc file with content:
