@@ -28,6 +28,9 @@ Migrate from older .xml version to .json version
 
 If there's no private package with requested package name the servers calls through to the public bower registry.
 
+You can turn off the public bower registry fallback by adding the '-np' argument
+> private-bower -np
+
 #Usage
 
 ##Web interface
