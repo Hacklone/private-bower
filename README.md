@@ -20,16 +20,21 @@ Install
 Run
 > private-bower
 
-Optional Parameters
-> private-bower -p 5678 -o "output file path"
-
 Migrate from older .xml version to .json version
 > private-bower --migrate "youroldXML(default bowerRepository.xml)"
 
 If there's no private package with requested package name the servers calls through to the public bower registry.
 
-You can turn off the public bower registry fallback by adding the '-np' argument
-> private-bower -np
+#Optional parameters
+
+| name       | description                                    |
+|------------|------------------------------------------------|
+| --help     | print out help                                 |
+| --port     | port to open                                   |
+| --output   | path to persisting output file                 |
+| --nopublic | do not use fallback to public registry feature |
+| --migrate  | migrates from xml file format to json          |
+
 
 #Usage
 
