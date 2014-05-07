@@ -57,15 +57,16 @@
             </div>
             <div ng-if="packages && packages.length">
                 <div ng-repeat="package in packages | filter:{ name: packageFilter }" class="package">
-                    <div class="row">
-                        <div class="col-md-4">
+                    <div>
+                        <div>
                             <h3>
                                 <a href="{{ package.repo.replace('git:', 'http:') }}" target="_blank">
                                     {{ package.name }}
                                 </a>
                             </h3>
+                            <span class="pull-right">hits: {{ package.hits }}</span>
                         </div>
-                        <div class="col-md-8">
+                        <div>
                             <div style="margin-top: 5px;">
                                {{ package.repo }}
                             </div>

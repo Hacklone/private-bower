@@ -7,10 +7,10 @@ A simple private bower registry for private package handling.
 
 *   Register private packages
 *   Fallback to public packages
+*   Cache public registry
 *   Web UI
 
-_Features to come:
-Web UI management, Cache public bower registry, ..._
+_Features to come: Web UI management, ..._
 
 #Installion
 

@@ -2,6 +2,10 @@ body, html {
     height: 100%;
 }
 
+body {
+    overflow-y: scroll;
+}
+
 #wrap {
     min-height: 100%;
     height: auto !important;
