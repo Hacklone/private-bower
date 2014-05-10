@@ -50,6 +50,16 @@ Must be a valid JSON
 }
 ```
 
+| name                           | description                                                            | default                |
+|--------------------------------|------------------------------------------------------------------------|------------------------|
+| port                           | Port on which the private bower server will listen                     | 5678                   |
+| registryFile                   | File for persisting private packages                                   | ./bowerRepository.json |
+| disablePublic                  | Disable fallback feature for public packages                           | false                  |
+| repositoryCache.enabled        | Public git repository caching enabled                                  | false                  |
+| repositoryCache.gitHost        | Server's host name for git access                                      | git://localhost        |
+| repositoryCache.gitPort        | Port to open git server on                                             | 6789                   |
+| repositoryCache.cacheDirectory | Directory where the public git repository cache will save repositories | ./repoCache            |
+
 #Usage
 
 ##Web interface
