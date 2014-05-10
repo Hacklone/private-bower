@@ -1,6 +1,6 @@
 {
     "name": "private-bower",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "author": "Hacklone <toakak@gmail.com>",
     "description": "A simple private bower registry",
     "main": "./lib/private-bower",
@@ -12,16 +12,18 @@
         "bower",
         "private",
         "registry",
-        "repository"
+        "repository",
+        "git"
     ],
     "scripts": {
         "start": "node ./bin/private-bower"
     },
     "dependencies": {
+        "q": "1.0.x",
+        "mkdirp": "0.5.x",
         "colors": "0.6.x",
-        "optimist": "0.5.x",
         "express": "3.x.x",
-        "xml2js": "0.4.x"
+        "optimist": "0.5.x"
     },
     "bugs": {
         "url": "https://github.com/Hacklone/private-bower/issues"

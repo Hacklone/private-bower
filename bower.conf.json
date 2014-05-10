@@ -1,0 +1,11 @@
+{
+    "port": 5678,
+    "registryFile": "./bowerRepository.json",
+    "disablePublic": false,
+    "repositoryCache": {
+        "enabled": false,
+        "gitHost": "localhost",
+        "gitPort": 6789,
+        "cacheDirectory": "./repoCache"
+    }
+}

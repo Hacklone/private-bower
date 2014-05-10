@@ -8,6 +8,7 @@ A simple private bower registry for private package handling.
 *   Register private packages
 *   Fallback to public packages
 *   Cache public registry
+*   Cache public git repositories
 *   Web UI
 
 _Features to come: Web UI management, ..._
@@ -20,21 +21,34 @@ Install
 Run
 > private-bower
 
-Migrate from older .xml version to .json version
-> private-bower --migrate "youroldXML(default bowerRepository.xml)"
+Run with config file specified
+> private-bower --conf /myBowerConfig.json
 
 If there's no private package with requested package name the servers calls through to the public bower registry.
 
-#Optional parameters
+#Parameters
 
 | name       | description                                    |
 |------------|------------------------------------------------|
 | --help     | print out help                                 |
-| --port     | port to open                                   |
-| --output   | path to persisting output file                 |
-| --nopublic | do not use fallback to public registry feature |
-| --migrate  | migrates from xml file format to json          |
+| --config   | path to config file (Must be a valid json)     |
 
+#Config file
+
+Must be a valid JSON
+```javascript
+{
+    "port": 5678,
+    "registryFile": "./bowerRepository.json",
+    "disablePublic": false,
+    "repositoryCache": {
+        "enabled": false,
+        "gitHost": "git://localhost",
+        "gitPort": 6789,
+        "cacheDirectory": "./repoCache"
+    }
+}
+```
 
 #Usage
 
