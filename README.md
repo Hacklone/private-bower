@@ -22,7 +22,7 @@ Run
 > private-bower
 
 Run with config file specified
-> private-bower --conf /myBowerConfig.json
+> private-bower --conf ./myBowerConfig.json
 
 If there's no private package with requested package name the servers calls through to the public bower registry.
 
