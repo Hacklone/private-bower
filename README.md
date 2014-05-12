@@ -74,7 +74,12 @@ Create .bowerrc file with content:
 GET
 > bower-server:5678/packages
 
+##Search packages
+> bower search <packageName>
+
 ##Register package
+> bower register <packageName> <gitRepo>
+or
 POST
 > bower-server:5678/registerPackage
 
