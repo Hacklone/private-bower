@@ -75,10 +75,11 @@ GET
 > bower-server:5678/packages
 
 ##Search packages
-> bower search <packageName>
+> bower search \[packageName\]
 
 ##Register package
-> bower register <packageName> <gitRepo>
+> bower register \[packageName\] \[gitRepo\]
+
 or
 POST
 > bower-server:5678/registerPackage
