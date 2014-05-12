@@ -3,7 +3,7 @@
     "registryFile": "./bowerRepository.json",
     "disablePublic": false,
     "repositoryCache": {
-        "enabled": false,
+        "enabled": true,
         "gitHost": "localhost",
         "gitPort": 5679,
         "cacheDirectory": "./repoCache"
