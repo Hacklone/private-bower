@@ -4,7 +4,7 @@
     "disablePublic": false,
     "repositoryCache": {
         "enabled": true,
-        "gitHost": "cdams-slave01",
+        "gitHost": "localhost",
         "gitPort": 5679,
         "cacheDirectory": "./repoCache"
     },
