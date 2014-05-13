@@ -11,8 +11,6 @@
     "proxySettings" : {
         "enabled": true,
         "host": "pac.group.intranet",
-        "username": "jp09ne",
-        "password" : "xx",
         "port": "8080"
     }
 }
