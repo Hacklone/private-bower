@@ -3,13 +3,13 @@
     "registryFile": "./bowerRepository.json",
     "disablePublic": false,
     "repositoryCache": {
-        "enabled": true,
-        "gitHost": "localhost",
+        "enabled": false,
+        "gitHost": "10.64.90.167",
         "gitPort": 5679,
         "cacheDirectory": "./repoCache"
     },
     "proxySettings" : {
-        "enabled": true,
+        "enabled": false,
         "host": "pac.group.intranet",
         "username": "name",
         "password" : "pass",
