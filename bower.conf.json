@@ -2,8 +2,9 @@
     "port": 5678,
     "registryFile": "./bowerRepository.json",
     "disablePublic": false,
+    "log4jsConfigurationFile": "",
     "repositoryCache": {
-        "enabled": false,
+        "enabled": true,
         "gitHost": "localhost",
         "gitPort": 6789,
         "cacheDirectory": "./repoCache"

@@ -24,7 +24,8 @@
         "colors": "0.6.x",
         "express": "3.x.x",
         "optimist": "0.5.x",
-        "node-rest-client" : "0.8.6"
+        "node-rest-client" : "0.8.6",
+        "log4js": "0.6.14"
     },
     "bugs": {
         "url": "https://github.com/Hacklone/private-bower/issues"
