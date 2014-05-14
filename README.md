@@ -52,7 +52,8 @@ Must be a valid JSON
          "host": "proxy",
          "username": "name",
          "password" : "pass",
-         "port": 8080
+         "port": 8080,
+         "tunnel": false
      }
 }
 ```
