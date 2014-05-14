@@ -4,13 +4,13 @@
     "disablePublic": false,
     "repositoryCache": {
         "enabled": false,
-        "gitHost": "10.64.90.167",
-        "gitPort": 5679,
+        "gitHost": "localhost",
+        "gitPort": 6789,
         "cacheDirectory": "./repoCache"
     },
     "proxySettings" : {
         "enabled": false,
-        "host": "pac.group.intranet",
+        "host": "proxy",
         "username": "name",
         "password" : "pass",
         "port": 8080,
