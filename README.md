@@ -46,7 +46,14 @@ Must be a valid JSON
         "gitHost": "git://localhost",
         "gitPort": 6789,
         "cacheDirectory": "./repoCache"
-    }
+    },
+     "proxySettings" : {
+         "enabled": false,
+         "host": "proxy",
+         "username": "name",
+         "password" : "pass",
+         "port": 8080
+     }
 }
 ```
 
@@ -59,6 +66,14 @@ Must be a valid JSON
 | repositoryCache.gitHost        | Server's host name for git access                                      | git://localhost        |
 | repositoryCache.gitPort        | Port to open git server on                                             | 6789                   |
 | repositoryCache.cacheDirectory | Directory where the public git repository cache will save repositories | ./repoCache            |
+| proxySettings.enabled          | Enable the proxy, use the proxy to call the bower remote repo          | false                  |
+| proxySettings.host             | Proxy host                                                             | proxy                  |
+| proxySettings.username         | Proxy username                                                         | name                   |
+| proxySettings.password         | Proxy password                                                         | pass                   |
+| proxySettings.port             | Proxy port                                                             | 8080                   |
+
+
+
 
 #Usage
 
