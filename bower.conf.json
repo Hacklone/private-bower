@@ -7,5 +7,13 @@
         "gitHost": "localhost",
         "gitPort": 6789,
         "cacheDirectory": "./repoCache"
+    },
+    "proxySettings" : {
+        "enabled": false,
+        "host": "proxy",
+        "username": "name",
+        "password" : "pass",
+        "port": 8080,
+        "tunnel": false
     }
 }

@@ -23,7 +23,8 @@
         "mkdirp": "0.5.x",
         "colors": "0.6.x",
         "express": "3.x.x",
-        "optimist": "0.5.x"
+        "optimist": "0.5.x",
+        "node-rest-client" : "0.8.6"
     },
     "bugs": {
         "url": "https://github.com/Hacklone/private-bower/issues"
