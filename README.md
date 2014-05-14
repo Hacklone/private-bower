@@ -71,6 +71,7 @@ Must be a valid JSON
 | proxySettings.username         | Proxy username                                                         | name                   |
 | proxySettings.password         | Proxy password                                                         | pass                   |
 | proxySettings.port             | Proxy port                                                             | 8080                   |
+| proxySettings.tunnel           | Use tunnel?                                                            | false                  |
 
 
 
