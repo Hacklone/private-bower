@@ -47,18 +47,18 @@ Must be a valid JSON
         "gitPort": 6789,
         "cacheDirectory": "./repoCache"
     },
-     "proxySettings" : {
-         "enabled": false,
-         "host": "proxy",
-         "username": "name",
-         "password" : "pass",
-         "port": 8080,
-         "tunnel": false
-     },
-      "log4js" : {
-          "enabled": true,
-          "configPath" : ""
-      }
+    "proxySettings" : {
+        "enabled": false,
+        "host": "proxy",
+        "username": "name",
+        "password" : "pass",
+        "port": 8080,
+        "tunnel": false
+    },
+    "log4js" : {
+        "enabled": true,
+        "configPath" : "log4js_configuration.json"
+    }
 }
 ```
 
