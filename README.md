@@ -41,7 +41,6 @@ Must be a valid JSON
     "port": 5678,
     "registryFile": "./bowerRepository.json",
     "disablePublic": false,
-    "log4jsConfigurationFile": "log4js_configuration.json",
     "repositoryCache": {
         "enabled": false,
         "gitHost": "git://localhost",
@@ -55,7 +54,11 @@ Must be a valid JSON
          "password" : "pass",
          "port": 8080,
          "tunnel": false
-     }
+     },
+      "log4js" : {
+          "enabled": true,
+          "configPath" : ""
+      }
 }
 ```
 
@@ -64,7 +67,6 @@ Must be a valid JSON
 | port                           | Port on which the private bower server will listen                     | 5678                   |
 | registryFile                   | File for persisting private packages                                   | ./bowerRepository.json |
 | disablePublic                  | Disable fallback feature for public packages                           | false                  |
-| log4jsConfigurationFile        | Log4js configuration file. See: log4js-node for configuration options  | none                   |
 | repositoryCache.enabled        | Public git repository caching enabled                                  | false                  |
 | repositoryCache.gitHost        | Server's host name for git access                                      | git://localhost        |
 | repositoryCache.gitPort        | Port to open git server on                                             | 6789                   |
@@ -75,6 +77,8 @@ Must be a valid JSON
 | proxySettings.password         | Proxy password                                                         | pass                   |
 | proxySettings.port             | Proxy port                                                             | 8080                   |
 | proxySettings.tunnel           | Use tunnel?                                                            | false                  |
+| log4js.enabled                 | Use log4js ?                                                           | false                  |
+| log4js.configPath              | Log4js configuration file. See: log4js-node for configuration options  | none                   |
 
 
 

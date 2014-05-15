@@ -7,7 +7,8 @@
             "alwaysIncludePattern": false
         },
         {
-            "type": "console" }
-        ],
-            "replaceConsole": true
+            "type": "console"
+        }
+    ],
+    "replaceConsole": true
 }
