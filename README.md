@@ -54,7 +54,11 @@ Must be a valid JSON
          "password" : "pass",
          "port": 8080,
          "tunnel": false
-     }
+     },
+      "log4js" : {
+          "enabled": true,
+          "configPath" : ""
+      }
 }
 ```
 
@@ -73,6 +77,8 @@ Must be a valid JSON
 | proxySettings.password         | Proxy password                                                         | pass                   |
 | proxySettings.port             | Proxy port                                                             | 8080                   |
 | proxySettings.tunnel           | Use tunnel?                                                            | false                  |
+| log4js.enabled                 | Use log4js ?                                                           | false                  |
+| log4js.configPath              | Log4js configuration file. See: log4js-node for configuration options  | none                   |
 
 
 
@@ -120,6 +126,15 @@ POST
 > bower-server:5678/removePackages
 
 > { "packages": ["package-name"] }
+
+
+##Log4js configuration examples
+>There are two appenders set in the example configuration.
+>You need to remove one of the two if you want to use it.
+>fileDate appender will write the log to a file which will be rotated daily.
+>Console will write the logging to the console in the log4js format.
+>You need to set the replaceConsole to true if you want to write the logging to the log4j appenders.
+>See github.com/nomiddlename/log4js-node for more information
 
 #License
 > The MIT License (MIT)

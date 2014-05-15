@@ -15,5 +15,9 @@
         "password" : "pass",
         "port": 8080,
         "tunnel": false
+    },
+    "log4js" : {
+        "enabled": false,
+        "configPath" : "log4js_configuration.json"
     }
 }
