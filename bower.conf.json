@@ -17,7 +17,7 @@
         "tunnel": false
     },
     "log4js" : {
-        "enabled": true,
-        "configPath" : ""
+        "enabled": false,
+        "configPath" : "log4js_configuration.json"
     }
 }
