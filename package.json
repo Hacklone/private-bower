@@ -1,6 +1,6 @@
 {
     "name": "private-bower",
-    "version": "0.2.3",
+    "version": "0.2.4",
     "author": "Hacklone <toakak@gmail.com>",
     "description": "A simple private bower registry",
     "main": "./lib/private-bower",
