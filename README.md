@@ -56,7 +56,7 @@ Must be a valid JSON
         "tunnel": false
     },
     "log4js" : {
-        "enabled": true,
+        "enabled": false,
         "configPath" : "log4js_configuration.json"
     }
 }
