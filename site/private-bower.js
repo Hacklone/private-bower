@@ -7,7 +7,7 @@ angular.module('PrivateBower', ['ngAnimate'])
 
         init();
         function init() {
-            $http.get('/packages')
+            $http.get('packages')
                 .success(function(packages) {
                     $scope.packages = packages;
                 })
