@@ -4,10 +4,18 @@
     "disablePublic": false,
     "publicRegistry": "http://bower.herokuapp.com/packages/",
     "repositoryCache": {
-        "enabled": false,
-        "gitHost": "localhost",
-        "gitPort": 6789,
-        "cacheDirectory": "./repoCache"
+        "git": {
+            "enabled": false,
+            "cacheDirectory": "./gitRepoCache",
+            "host": "localhost",
+            "port": 6789
+        },
+        "svn": {
+            "enabled": false,
+            "cacheDirectory": "./svnRepoCache",
+            "host": "localhost",
+            "port": 7891
+        }
     },
     "proxySettings" : {
         "enabled": false,
@@ -19,6 +27,6 @@
     },
     "log4js" : {
         "enabled": false,
-        "configPath" : "log4js_configuration.json"
+        "configPath" : "log4js.conf.json"
     }
 }
