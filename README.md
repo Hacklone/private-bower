@@ -9,6 +9,7 @@ A simple private bower registry for private package handling.
 *   Fallback to public packages
 *   Cache public registry
 *   Cache public git repositories
+*   Cache public svn repositories
 *   Web UI
 
 _Features to come: Web UI management, ..._
@@ -43,10 +44,18 @@ Must be a valid JSON
     "disablePublic": false,
     "publicRegistry": "http://bower.herokuapp.com/packages/",
     "repositoryCache": {
-        "enabled": false,
-        "gitHost": "git://localhost",
-        "gitPort": 6789,
-        "cacheDirectory": "./repoCache"
+        "git": {
+            "enabled": false,
+            "cacheDirectory": "./gitRepoCache",
+            "host": "localhost",
+            "port": 6789
+        },
+        "svn": {
+            "enabled": false,
+            "cacheDirectory": "./svnRepoCache",
+            "host": "localhost",
+            "port": 7891
+        }
     },
     "proxySettings" : {
         "enabled": false,
@@ -58,29 +67,29 @@ Must be a valid JSON
     },
     "log4js" : {
         "enabled": false,
-        "configPath" : "log4js_configuration.json"
+        "configPath" : "log4js.conf.json"
     }
 }
 ```
 
-| name                           | description                                                            | default                               |
-|--------------------------------|------------------------------------------------------------------------|---------------------------------------|
-| port                           | Port on which the private bower server will listen                     | 5678                                  |
-| registryFile                   | File for persisting private packages                                   | ./bowerRepository.json                |
-| disablePublic                  | Disable fallback feature for public packages                           | false                                 |
-| publicRegistry                 | Public bower registry's url                                            | http://bower.herokuapp.com/packages/  |
-| repositoryCache.enabled        | Public git repository caching enabled                                  | false                                 |
-| repositoryCache.gitHost        | Server's host name for git access                                      | git://localhost                       |
-| repositoryCache.gitPort        | Port to open git server on                                             | 6789                                  |
-| repositoryCache.cacheDirectory | Directory where the public git repository cache will save repositories | ./repoCache                           |
-| proxySettings.enabled          | Enable the proxy, use the proxy to call the bower remote repo          | false                                 |
-| proxySettings.host             | Proxy host                                                             | proxy                                 |
-| proxySettings.username         | Proxy username                                                         | name                                  |
-| proxySettings.password         | Proxy password                                                         | pass                                  |
-| proxySettings.port             | Proxy port                                                             | 8080                                  |
-| proxySettings.tunnel           | Use tunnel?                                                            | false                                 |
-| log4js.enabled                 | Use log4js ?                                                           | false                                 |
-| log4js.configPath              | Log4js configuration file. See: log4js-node for configuration options  | none                                  |
+| name                                       | description                                                            | default                               |
+|--------------------------------------------|------------------------------------------------------------------------|---------------------------------------|
+| port                                       | Port on which the private bower server will listen                     | 5678                                  |
+| registryFile                               | File for persisting private packages                                   | ./bowerRepository.json                |
+| disablePublic                              | Disable fallback feature for public packages                           | false                                 |
+| publicRegistry                             | Public bower registry's url                                            | http://bower.herokuapp.com/packages/  |
+| repositoryCache.(svn|git).enabled          | Public repository caching enabled                                      | false                                 |
+| repositoryCache.(svn|git).host             | Server's host name for repository access                               | localhost                             |
+| repositoryCache.(svn|git).port             | Port to open repository server on                                      | 7891 | 6789                           |
+| repositoryCache.(svn|git).cacheDirectory   | Directory where the public repository cache will save repositories     | ./svnRepoCache | ./gitRepoCache       |
+| proxySettings.enabled                      | Enable the proxy, use the proxy to call the bower remote repo          | false                                 |
+| proxySettings.host                         | Proxy host                                                             | proxy                                 |
+| proxySettings.username                     | Proxy username                                                         | name                                  |
+| proxySettings.password                     | Proxy password                                                         | pass                                  |
+| proxySettings.port                         | Proxy port                                                             | 8080                                  |
+| proxySettings.tunnel                       | Use tunnel?                                                            | false                                 |
+| log4js.enabled                             | Use log4js ?                                                           | false                                 |
+| log4js.configPath                          | Log4js configuration file. See: log4js-node for configuration options  | none                                  |
 
 
 

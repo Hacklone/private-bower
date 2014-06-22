@@ -1,6 +1,6 @@
 {
     "name": "private-bower",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "author": "Hacklone <toakak@gmail.com>",
     "description": "A simple private bower registry",
     "main": "./lib/private-bower",
@@ -13,7 +13,10 @@
         "private",
         "registry",
         "repository",
-        "git"
+        "repo",
+        "git",
+        "svn",
+        "package"
     ],
     "scripts": {
         "start": "node ./bin/private-bower"
