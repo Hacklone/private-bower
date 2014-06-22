@@ -78,10 +78,10 @@ Must be a valid JSON
 | registryFile                               | File for persisting private packages                                   | ./bowerRepository.json                |
 | disablePublic                              | Disable fallback feature for public packages                           | false                                 |
 | publicRegistry                             | Public bower registry's url                                            | http://bower.herokuapp.com/packages/  |
-| repositoryCache.(svn|git).enabled          | Public repository caching enabled                                      | false                                 |
-| repositoryCache.(svn|git).host             | Server's host name for repository access                               | localhost                             |
-| repositoryCache.(svn|git).port             | Port to open repository server on                                      | 7891 | 6789                           |
-| repositoryCache.(svn|git).cacheDirectory   | Directory where the public repository cache will save repositories     | ./svnRepoCache | ./gitRepoCache       |
+| repositoryCache.(svn, git).enabled         | Public repository caching enabled                                      | false                                 |
+| repositoryCache.(svn, git).host            | Server's host name for repository access                               | localhost                             |
+| repositoryCache.(svn, git).port            | Port to open repository server on                                      | 7891, 6789                            |
+| repositoryCache.(svn, git).cacheDirectory  | Directory where the public repository cache will save repositories     | ./svnRepoCache, ./gitRepoCache        |
 | proxySettings.enabled                      | Enable the proxy, use the proxy to call the bower remote repo          | false                                 |
 | proxySettings.host                         | Proxy host                                                             | proxy                                 |
 | proxySettings.username                     | Proxy username                                                         | name                                  |
