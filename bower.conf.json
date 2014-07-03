@@ -3,6 +3,10 @@
     "registryFile": "./bowerRepository.json",
     "disablePublic": false,
     "publicRegistry": "http://bower.herokuapp.com/packages/",
+    "authentication": {
+        "enabled": false,
+        "key": "password"
+    },
     "repositoryCache": {
         "git": {
             "enabled": false,

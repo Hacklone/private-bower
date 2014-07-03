@@ -43,6 +43,10 @@ Must be a valid JSON
     "registryFile": "./bowerRepository.json",
     "disablePublic": false,
     "publicRegistry": "http://bower.herokuapp.com/packages/",
+    "authentication": {
+        "enabled": false,
+        "key": "password"
+    },
     "repositoryCache": {
         "git": {
             "enabled": false,
@@ -78,6 +82,8 @@ Must be a valid JSON
 | registryFile                               | File for persisting private packages                                   | ./bowerRepository.json                |
 | disablePublic                              | Disable fallback feature for public packages                           | false                                 |
 | publicRegistry                             | Public bower registry's url                                            | http://bower.herokuapp.com/packages/  |
+| authentication.enabled                     | Authentication enabled for registering packages                        | false                                 |
+| authentication.key                         | Authentication key (Auth-Key header)                                   | password                              |
 | repositoryCache.(svn, git).enabled         | Public repository caching enabled                                      | false                                 |
 | repositoryCache.(svn, git).host            | Server's host name for repository access                               | localhost                             |
 | repositoryCache.(svn, git).port            | Port to open repository server on                                      | 7891, 6789                            |
@@ -137,6 +143,17 @@ POST
 > bower-server:5678/removePackages
 
 > { "packages": ["package-name"] }
+
+##Authentication
+
+Authentication can be enabled for the following features:
+*   Register package
+*   Register packages
+*   Remove package
+*   Remove packages
+
+Add ```Auth-Key``` header to request.
+> Auth-Key = password
 
 
 ##Log4js configuration examples
