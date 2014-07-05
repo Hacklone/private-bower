@@ -12,13 +12,15 @@
             "enabled": false,
             "cacheDirectory": "./gitRepoCache",
             "host": "localhost",
-            "port": 6789
+            "port": 6789,
+            "refreshTimeout": 10
         },
         "svn": {
             "enabled": false,
             "cacheDirectory": "./svnRepoCache",
             "host": "localhost",
-            "port": 7891
+            "port": 7891,
+            "refreshTimeout": 10
         }
     },
     "proxySettings" : {
