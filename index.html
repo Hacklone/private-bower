@@ -28,37 +28,359 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="private-bower" class="anchor" href="#private-bower"><span class="octicon octicon-link"></span></a>private-bower</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>A simple private bower registry for private package handling.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h1>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h1>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<ul>
+<li>  Register private packages</li>
+<li>  Fallback to public packages</li>
+<li>  Cache public registry</li>
+<li>  Cache public git repositories</li>
+<li>  Cache public svn repositories</li>
+<li>  Web UI</li>
+</ul><p><em>Features to come: Web UI management, ...</em></p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<h1>
+<a name="installion" class="anchor" href="#installion"><span class="octicon octicon-link"></span></a>Installion</h1>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>Install</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<blockquote>
+<p>npm install -g private-bower</p>
+</blockquote>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Run</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<blockquote>
+<p>private-bower</p>
+</blockquote>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Run with config file specified</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<blockquote>
+<p>private-bower --config ./myBowerConfig.json</p>
+</blockquote>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>If there's no private package with requested package name the servers calls through to the public bower registry.</p>
+
+<h1>
+<a name="parameters" class="anchor" href="#parameters"><span class="octicon octicon-link"></span></a>Parameters</h1>
+
+<table>
+<thead><tr>
+<th>name</th>
+<th>description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>--help</td>
+<td>print out help</td>
+</tr>
+<tr>
+<td>--config</td>
+<td>path to config file (Must be a valid json)</td>
+</tr>
+</tbody>
+</table><h1>
+<a name="config-file" class="anchor" href="#config-file"><span class="octicon octicon-link"></span></a>Config file</h1>
+
+<p>Must be a valid JSON</p>
+
+<div class="highlight highlight-javascript"><pre><span class="p">{</span>
+    <span class="s2">"port"</span><span class="o">:</span> <span class="mi">5678</span><span class="p">,</span>
+    <span class="s2">"registryFile"</span><span class="o">:</span> <span class="s2">"./bowerRepository.json"</span><span class="p">,</span>
+    <span class="s2">"disablePublic"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="s2">"publicRegistry"</span><span class="o">:</span> <span class="s2">"http://bower.herokuapp.com/packages/"</span><span class="p">,</span>
+    <span class="s2">"authentication"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"password"</span>
+    <span class="p">},</span>
+    <span class="s2">"repositoryCache"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"cachePrivate"</span><span class="o">:</span> <span class="kc">false</span>
+        <span class="s2">"git"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">"cacheDirectory"</span><span class="o">:</span> <span class="s2">"./gitRepoCache"</span><span class="p">,</span>
+            <span class="s2">"host"</span><span class="o">:</span> <span class="s2">"localhost"</span><span class="p">,</span>
+            <span class="s2">"port"</span><span class="o">:</span> <span class="mi">6789</span><span class="p">,</span>
+            <span class="s2">"refreshTimeout"</span><span class="o">:</span> <span class="mi">10</span>
+        <span class="p">},</span>
+        <span class="s2">"svn"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="s2">"cacheDirectory"</span><span class="o">:</span> <span class="s2">"./svnRepoCache"</span><span class="p">,</span>
+            <span class="s2">"host"</span><span class="o">:</span> <span class="s2">"localhost"</span><span class="p">,</span>
+            <span class="s2">"port"</span><span class="o">:</span> <span class="mi">7891</span><span class="p">,</span>
+            <span class="s2">"refreshTimeout"</span><span class="o">:</span> <span class="mi">10</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"proxySettings"</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">"host"</span><span class="o">:</span> <span class="s2">"proxy"</span><span class="p">,</span>
+        <span class="s2">"username"</span><span class="o">:</span> <span class="s2">"name"</span><span class="p">,</span>
+        <span class="s2">"password"</span> <span class="o">:</span> <span class="s2">"pass"</span><span class="p">,</span>
+        <span class="s2">"port"</span><span class="o">:</span> <span class="mi">8080</span><span class="p">,</span>
+        <span class="s2">"tunnel"</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">},</span>
+    <span class="s2">"log4js"</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="s2">"configPath"</span> <span class="o">:</span> <span class="s2">"log4js.conf.json"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+<table>
+<thead><tr>
+<th>name</th>
+<th>description</th>
+<th>default</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>port</td>
+<td>Port on which the private bower server will listen</td>
+<td>5678</td>
+</tr>
+<tr>
+<td>registryFile</td>
+<td>File for persisting private packages</td>
+<td>./bowerRepository.json</td>
+</tr>
+<tr>
+<td>disablePublic</td>
+<td>Disable fallback feature for public packages</td>
+<td>false</td>
+</tr>
+<tr>
+<td>publicRegistry</td>
+<td>Public bower registry's url</td>
+<td><a href="http://bower.herokuapp.com/packages/">http://bower.herokuapp.com/packages/</a></td>
+</tr>
+<tr>
+<td>authentication.enabled</td>
+<td>Authentication enabled for registering packages</td>
+<td>false</td>
+</tr>
+<tr>
+<td>authentication.key</td>
+<td>Authentication key (Auth-Key header)</td>
+<td>password</td>
+</tr>
+<tr>
+<td>repositoryCache.(svn, git).enabled</td>
+<td>Public repository caching enabled</td>
+<td>false</td>
+</tr>
+<tr>
+<td>repositoryCache.cachePrivate</td>
+<td>Also cache privately registered packages</td>
+<td>false</td>
+</tr>
+<tr>
+<td>repositoryCache.(svn, git).host</td>
+<td>Server's host name for repository access</td>
+<td>localhost</td>
+</tr>
+<tr>
+<td>repositoryCache.(svn, git).port</td>
+<td>Port to open repository server on</td>
+<td>7891, 6789</td>
+</tr>
+<tr>
+<td>repositoryCache.(svn, git).cacheDirectory</td>
+<td>Directory where the public repository cache will save repositories</td>
+<td>./svnRepoCache, ./gitRepoCache</td>
+</tr>
+<tr>
+<td>repositoryCache.(svn, git).refreshTimeout</td>
+<td>Time to wai between repository cache refresh (minutes)</td>
+<td>10 minutes</td>
+</tr>
+<tr>
+<td>proxySettings.enabled</td>
+<td>Enable the proxy, use the proxy to call the bower remote repo</td>
+<td>false</td>
+</tr>
+<tr>
+<td>proxySettings.host</td>
+<td>Proxy host</td>
+<td>proxy</td>
+</tr>
+<tr>
+<td>proxySettings.username</td>
+<td>Proxy username</td>
+<td>name</td>
+</tr>
+<tr>
+<td>proxySettings.password</td>
+<td>Proxy password</td>
+<td>pass</td>
+</tr>
+<tr>
+<td>proxySettings.port</td>
+<td>Proxy port</td>
+<td>8080</td>
+</tr>
+<tr>
+<td>proxySettings.tunnel</td>
+<td>Use tunnel?</td>
+<td>false</td>
+</tr>
+<tr>
+<td>log4js.enabled</td>
+<td>Use log4js ?</td>
+<td>false</td>
+</tr>
+<tr>
+<td>log4js.configPath</td>
+<td>Log4js configuration file. See: log4js-node for configuration options</td>
+<td>none</td>
+</tr>
+</tbody>
+</table><h1>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<h2>
+<a name="web-interface" class="anchor" href="#web-interface"><span class="octicon octicon-link"></span></a>Web interface</h2>
+
+<p>Convenient way for viewing your packages in a browser</p>
+
+<blockquote>
+<p>http://localhost:5678/</p>
+</blockquote>
+
+<h2>
+<a name="project" class="anchor" href="#project"><span class="octicon octicon-link"></span></a>Project</h2>
+
+<p>Create .bowerrc file with content:</p>
+
+<blockquote>
+<p>{ "registry": "http://yourPrivateBowerRepo:5678" }</p>
+</blockquote>
+
+<h2>
+<a name="list-packages" class="anchor" href="#list-packages"><span class="octicon octicon-link"></span></a>List packages</h2>
+
+<p>GET</p>
+
+<blockquote>
+<p>bower-server:5678/packages</p>
+</blockquote>
+
+<h2>
+<a name="search-packages" class="anchor" href="#search-packages"><span class="octicon octicon-link"></span></a>Search packages</h2>
+
+<blockquote>
+<p>bower search [packageName]</p>
+</blockquote>
+
+<h2>
+<a name="register-package" class="anchor" href="#register-package"><span class="octicon octicon-link"></span></a>Register package</h2>
+
+<blockquote>
+<p>bower register [packageName] [gitRepo]</p>
+</blockquote>
+
+<p>or
+POST</p>
+
+<blockquote>
+<p>bower-server:5678/registerPackage</p>
+
+<p>{ "name": "package-name", "repo": "git://repoPath" }</p>
+</blockquote>
+
+<h2>
+<a name="register-packages" class="anchor" href="#register-packages"><span class="octicon octicon-link"></span></a>Register packages</h2>
+
+<p>POST</p>
+
+<blockquote>
+<p>bower-server:5678/registerPackages</p>
+
+<p>{ "packages": [ { "name": "package-name", "repo": "git://repoPath" } ] }</p>
+</blockquote>
+
+<h2>
+<a name="remove-package" class="anchor" href="#remove-package"><span class="octicon octicon-link"></span></a>Remove package</h2>
+
+<p>POST</p>
+
+<blockquote>
+<p>bower-server:5678/removePackage</p>
+
+<p>{ "name": "package-name" }</p>
+</blockquote>
+
+<h2>
+<a name="remove-packages" class="anchor" href="#remove-packages"><span class="octicon octicon-link"></span></a>Remove packages</h2>
+
+<p>POST</p>
+
+<blockquote>
+<p>bower-server:5678/removePackages</p>
+
+<p>{ "packages": ["package-name"] }</p>
+</blockquote>
+
+<h2>
+<a name="authentication" class="anchor" href="#authentication"><span class="octicon octicon-link"></span></a>Authentication</h2>
+
+<p>Authentication can be enabled for the following features:</p>
+
+<ul>
+<li>  Register package</li>
+<li>  Register packages</li>
+<li>  Remove package</li>
+<li>  Remove packages</li>
+</ul><p>Add <code>Auth-Key</code> header to request.</p>
+
+<blockquote>
+<p>Auth-Key = password</p>
+</blockquote>
+
+<h2>
+<a name="log4js-configuration-examples" class="anchor" href="#log4js-configuration-examples"><span class="octicon octicon-link"></span></a>Log4js configuration examples</h2>
+
+<blockquote>
+<p>There are two appenders set in the example configuration.
+You need to remove one of the two if you want to use it.
+fileDate appender will write the log to a file which will be rotated daily.
+Console will write the logging to the console in the log4js format.
+You need to set the replaceConsole to true if you want to write the logging to the log4j appenders.
+See github.com/nomiddlename/log4js-node for more information</p>
+</blockquote>
+
+<h1>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+
+<blockquote>
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2014 Hacklone
+<a href="https://github.com/Hacklone">https://github.com/Hacklone</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+</blockquote>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/Hacklone">Hacklone</a></p>
