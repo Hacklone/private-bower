@@ -8,6 +8,7 @@
         "key": "password"
     },
     "repositoryCache": {
+        "cachePrivate": false,
         "git": {
             "enabled": false,
             "cacheDirectory": "./gitRepoCache",
