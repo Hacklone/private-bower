@@ -14,7 +14,7 @@ A simple private bower registry for private package handling.
 
 _Features to come: Web UI management, ..._
 
-#Installion
+#Installation
 
 Install
 > npm install -g private-bower
@@ -53,6 +53,7 @@ Must be a valid JSON
             "cacheDirectory": "./gitRepoCache",
             "host": "localhost",
             "port": 6789,
+            "publicAccessURL" : "mycompany.fr/private-repo"
             "refreshTimeout": 10
         },
         "svn": {
@@ -78,27 +79,28 @@ Must be a valid JSON
 }
 ```
 
-| name                                       | description                                                            | default                               |
-|--------------------------------------------|------------------------------------------------------------------------|---------------------------------------|
-| port                                       | Port on which the private bower server will listen                     | 5678                                  |
-| registryFile                               | File for persisting private packages                                   | ./bowerRepository.json                |
-| disablePublic                              | Disable fallback feature for public packages                           | false                                 |
-| publicRegistry                             | Public bower registry's url                                            | http://bower.herokuapp.com/packages/  |
-| authentication.enabled                     | Authentication enabled for registering packages                        | false                                 |
-| authentication.key                         | Authentication key (Auth-Key header)                                   | password                              |
-| repositoryCache.(svn, git).enabled         | Public repository caching enabled                                      | false                                 |
-| repositoryCache.(svn, git).host            | Server's host name for repository access                               | localhost                             |
-| repositoryCache.(svn, git).port            | Port to open repository server on                                      | 7891, 6789                            |
-| repositoryCache.(svn, git).cacheDirectory  | Directory where the public repository cache will save repositories     | ./svnRepoCache, ./gitRepoCache        |
-| repositoryCache.(svn, git).refreshTimeout  | Time to wai between repository cache refresh (minutes)                 | 10 minutes                            |
-| proxySettings.enabled                      | Enable the proxy, use the proxy to call the bower remote repo          | false                                 |
-| proxySettings.host                         | Proxy host                                                             | proxy                                 |
-| proxySettings.username                     | Proxy username                                                         | name                                  |
-| proxySettings.password                     | Proxy password                                                         | pass                                  |
-| proxySettings.port                         | Proxy port                                                             | 8080                                  |
-| proxySettings.tunnel                       | Use tunnel?                                                            | false                                 |
-| log4js.enabled                             | Use log4js ?                                                           | false                                 |
-| log4js.configPath                          | Log4js configuration file. See: log4js-node for configuration options  | none                                  |
+| name                                       | description                                                                          | default                               |
+|--------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------|
+| port                                       | Port on which the private bower server will listen                                   | 5678                                  |
+| registryFile                               | File for persisting private packages                                                 | ./bowerRepository.json                |
+| disablePublic                              | Disable fallback feature for public packages                                         | false                                 |
+| publicRegistry                             | Public bower registry's url                                                          | http://bower.herokuapp.com/packages/  |
+| authentication.enabled                     | Authentication enabled for registering packages                                      | false                                 |
+| authentication.key                         | Authentication key (Auth-Key header)                                                 | password                              |
+| repositoryCache.(svn, git).enabled         | Public repository caching enabled                                                    | false                                 |
+| repositoryCache.(svn, git).host            | Server's host name for repository access                                             | localhost                             |
+| repositoryCache.(svn, git).port            | Port to open repository server on                                                    | 7891, 6789                            |
+| repositoryCache.(svn, git).publicAccessURL | Public address to access repository cache (useful if repository is behind an apache) | null                                  |
+| repositoryCache.(svn, git).cacheDirectory  | Directory where the public repository cache will save repositories                   | ./svnRepoCache, ./gitRepoCache        |
+| repositoryCache.(svn, git).refreshTimeout  | Time to wai between repository cache refresh (minutes)                               | 10 minutes                            |
+| proxySettings.enabled                      | Enable the proxy, use the proxy to call the bower remote repo                        | false                                 |
+| proxySettings.host                         | Proxy host                                                                           | proxy                                 |
+| proxySettings.username                     | Proxy username                                                                       | name                                  |
+| proxySettings.password                     | Proxy password                                                                       | pass                                  |
+| proxySettings.port                         | Proxy port                                                                           | 8080                                  |
+| proxySettings.tunnel                       | Use tunnel?                                                                          | false                                 |
+| log4js.enabled                             | Use log4js ?                                                                         | false                                 |
+| log4js.configPath                          | Log4js configuration file. See: log4js-node for configuration options                | none                                  |
 
 
 
