@@ -46,7 +46,7 @@
 </ul><p><em>Features to come: Web UI management, ...</em></p>
 
 <h1>
-<a name="installion" class="anchor" href="#installion"><span class="octicon octicon-link"></span></a>Installion</h1>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
 
 <p>Install</p>
 
@@ -107,6 +107,7 @@
             <span class="s2">"cacheDirectory"</span><span class="o">:</span> <span class="s2">"./gitRepoCache"</span><span class="p">,</span>
             <span class="s2">"host"</span><span class="o">:</span> <span class="s2">"localhost"</span><span class="p">,</span>
             <span class="s2">"port"</span><span class="o">:</span> <span class="mi">6789</span><span class="p">,</span>
+            <span class="s2">"publicAccessURL"</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="s2">"refreshTimeout"</span><span class="o">:</span> <span class="mi">10</span>
         <span class="p">},</span>
         <span class="s2">"svn"</span><span class="o">:</span> <span class="p">{</span>
@@ -114,6 +115,7 @@
             <span class="s2">"cacheDirectory"</span><span class="o">:</span> <span class="s2">"./svnRepoCache"</span><span class="p">,</span>
             <span class="s2">"host"</span><span class="o">:</span> <span class="s2">"localhost"</span><span class="p">,</span>
             <span class="s2">"port"</span><span class="o">:</span> <span class="mi">7891</span><span class="p">,</span>
+            <span class="s2">"publicAccessURL"</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
             <span class="s2">"refreshTimeout"</span><span class="o">:</span> <span class="mi">10</span>
         <span class="p">}</span>
     <span class="p">},</span>
@@ -188,6 +190,11 @@
 <td>repositoryCache.(svn, git).port</td>
 <td>Port to open repository server on</td>
 <td>7891, 6789</td>
+</tr>
+<tr>
+<td>repositoryCache.(svn, git).publicAccessURL</td>
+<td>Public address to access repository cache (useful if repository is behind an apache)</td>
+<td>null</td>
 </tr>
 <tr>
 <td>repositoryCache.(svn, git).cacheDirectory</td>
@@ -388,6 +395,16 @@ SOFTWARE.</p>
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-52899278-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
   </body>
 </html>
