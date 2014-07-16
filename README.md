@@ -54,7 +54,7 @@ Must be a valid JSON
             "cacheDirectory": "./gitRepoCache",
             "host": "localhost",
             "port": 6789,
-            "publicAccessURL" : "mycompany.com/private-repo"
+            "publicAccessURL" : null,
             "refreshTimeout": 10
         },
         "svn": {
@@ -62,6 +62,7 @@ Must be a valid JSON
             "cacheDirectory": "./svnRepoCache",
             "host": "localhost",
             "port": 7891,
+            "publicAccessURL" : null,
             "refreshTimeout": 10
         }
     },
