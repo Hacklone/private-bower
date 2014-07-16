@@ -3,6 +3,24 @@ private-bower
 
 A simple private bower registry for private package handling.
 
+- [Features](#features)
+- [Features to come](#features-to-come)
+- [Installation](#installation)
+- [Parameters](#parameters)
+- [Config file](#config-file)
+- [Usage](#usage)
+  - [Web interface](#web-interface)
+  - [Project](#project)
+  - [List packages](#list-packages)
+  - [Search packages](#search-packages)
+  - [Register package](#register-package)
+  - [Register packages](#register-packages)
+  - [Remove package](#remove-package)
+  - [Remove packages](#remove-packages)
+  - [Authentication](#authentication)
+  - [Log4js configuration examples](#log4js-configuration-examples)
+- [License](#license)
+
 #Features
 
 *   Register private packages
@@ -12,7 +30,9 @@ A simple private bower registry for private package handling.
 *   Cache public svn repositories
 *   Web UI
 
-_Features to come: Web UI management, ..._
+#Features to come
+
+*   Web UI management
 
 #Installation
 
@@ -164,7 +184,7 @@ Add ```Auth-Key``` header to request.
 > Auth-Key = password
 
 
-##Log4js configuration examples
+##Log4js configuration
 >There are two appenders set in the example configuration.
 >You need to remove one of the two if you want to use it.
 >fileDate appender will write the log to a file which will be rotated daily.
