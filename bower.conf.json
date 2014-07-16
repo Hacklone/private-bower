@@ -14,6 +14,7 @@
             "cacheDirectory": "./gitRepoCache",
             "host": "localhost",
             "port": 6789,
+            "publicAccessURL": null,
             "refreshTimeout": 10
         },
         "svn": {
@@ -21,6 +22,7 @@
             "cacheDirectory": "./svnRepoCache",
             "host": "localhost",
             "port": 7891,
+            "publicAccessURL": null,
             "refreshTimeout": 10
         }
     },
