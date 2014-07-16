@@ -48,6 +48,7 @@ Must be a valid JSON
         "key": "password"
     },
     "repositoryCache": {
+        "cachePrivate": false
         "git": {
             "enabled": false,
             "cacheDirectory": "./gitRepoCache",
@@ -88,6 +89,7 @@ Must be a valid JSON
 | authentication.enabled                     | Authentication enabled for registering packages                                      | false                                 |
 | authentication.key                         | Authentication key (Auth-Key header)                                                 | password                              |
 | repositoryCache.(svn, git).enabled         | Public repository caching enabled                                                    | false                                 |
+| repositoryCache.cachePrivate               | Also cache privately registered packages                                             | false                                 |
 | repositoryCache.(svn, git).host            | Server's host name for repository access                                             | localhost                             |
 | repositoryCache.(svn, git).port            | Port to open repository server on                                                    | 7891, 6789                            |
 | repositoryCache.(svn, git).publicAccessURL | Public address to access repository cache (useful if repository is behind an apache) | null                                  |
