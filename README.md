@@ -54,7 +54,7 @@ Must be a valid JSON
             "cacheDirectory": "./gitRepoCache",
             "host": "localhost",
             "port": 6789,
-            "publicAccessURL" : "mycompany.fr/private-repo"
+            "publicAccessURL" : "mycompany.com/private-repo"
             "refreshTimeout": 10
         },
         "svn": {
@@ -92,7 +92,7 @@ Must be a valid JSON
 | repositoryCache.cachePrivate               | Also cache privately registered packages                                             | false                                 |
 | repositoryCache.(svn, git).host            | Server's host name for repository access                                             | localhost                             |
 | repositoryCache.(svn, git).port            | Port to open repository server on                                                    | 7891, 6789                            |
-| repositoryCache.(svn, git).publicAccessURL | Public address to access repository cache (useful if repository is behind an apache) | null                                  |
+| repositoryCache.(svn, git).publicAccessURL | Public address to access repository cache (useful if repository is behind an apache) | mycompany.com/private-repo            |
 | repositoryCache.(svn, git).cacheDirectory  | Directory where the public repository cache will save repositories                   | ./svnRepoCache, ./gitRepoCache        |
 | repositoryCache.(svn, git).refreshTimeout  | Time to wai between repository cache refresh (minutes)                               | 10 minutes                            |
 | proxySettings.enabled                      | Enable the proxy, use the proxy to call the bower remote repo                        | false                                 |
