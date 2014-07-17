@@ -1,6 +1,6 @@
 {
     "name": "private-bower",
-    "version": "0.4.3",
+    "version": "0.4.4",
     "author": "Hacklone <toakak@gmail.com>",
     "description": "A simple private bower registry",
     "main": "./lib/private-bower",
@@ -30,7 +30,8 @@
         "express": "3.x.x",
         "optimist": "0.5.x",
         "node-rest-client" : "1.0.0",
-        "log4js": "0.6.14"
+        "log4js": "0.6.14",
+        "moment": "2.7.0"
     },
     "bugs": {
         "url": "https://github.com/Hacklone/private-bower/issues"
