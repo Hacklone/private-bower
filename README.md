@@ -68,7 +68,7 @@ Must be a valid JSON
         "key": "password"
     },
     "repositoryCache": {
-        "cachePrivate": false
+        "cachePrivate": false,
         "git": {
             "enabled": false,
             "cacheDirectory": "./gitRepoCache",
