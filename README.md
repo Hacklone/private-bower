@@ -104,7 +104,7 @@ Must be a valid JSON
 | name                                       | description                                                                          | default                               |
 |--------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------|
 | port                                       | Port on which the private bower server will listen                                   | 5678                                  |
-| registryFile                               | File for persisting private packages                                                 | ./bowerRepository.json                |
+| registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
 | disablePublic                              | Disable fallback feature for public packages                                         | false                                 |
 | publicRegistry                             | Public bower registry's url                                                          | http://bower.herokuapp.com/packages/  |
 | authentication.enabled                     | Authentication enabled for registering packages                                      | false                                 |
