@@ -15,7 +15,11 @@
             "host": "localhost",
             "port": 6789,
             "publicAccessURL": null,
-            "refreshTimeout": 10
+            "refreshTimeout": 10,
+            "parameters": {
+                "timeout": 60000,
+                "max-connections": 100
+            }
         },
         "svn": {
             "enabled": false,
