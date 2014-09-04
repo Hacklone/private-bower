@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,17 +16,18 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Private-bower</h1>
-        <p>A simple private bower registry</p>
-
-        <p class="view"><a href="https://github.com/Hacklone/private-bower">View the Project on GitHub <small>Hacklone/private-bower</small></a></p>
-
+        <h1 class="header">Private-bower</h1>
+        <p class="header">A simple private bower registry</p>
 
         <ul>
-          <li><a href="https://github.com/Hacklone/private-bower/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/Hacklone/private-bower/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/Hacklone/private-bower">View On <strong>GitHub</strong></a></li>
+          <li class="download"><a class="buttons" href="https://github.com/Hacklone/private-bower/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/Hacklone/private-bower/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/Hacklone/private-bower">View On GitHub</a></li>
         </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/Hacklone">Hacklone</a></p>
+
+
       </header>
       <section>
         <h1>
@@ -127,7 +129,7 @@
         <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"password"</span>
     <span class="p">},</span>
     <span class="s2">"repositoryCache"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"cachePrivate"</span><span class="o">:</span> <span class="kc">false</span>
+        <span class="s2">"cachePrivate"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
         <span class="s2">"git"</span><span class="o">:</span> <span class="p">{</span>
             <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
             <span class="s2">"cacheDirectory"</span><span class="o">:</span> <span class="s2">"./gitRepoCache"</span><span class="p">,</span>
@@ -174,7 +176,7 @@
 </tr>
 <tr>
 <td>registryFile</td>
-<td>File for persisting private packages</td>
+<td>File for persisting private packages (must be a valid json)</td>
 <td>./bowerRepository.json</td>
 </tr>
 <tr>
@@ -231,6 +233,11 @@
 <td>repositoryCache.(svn, git).refreshTimeout</td>
 <td>Time to wai between repository cache refresh (minutes)</td>
 <td>10 minutes</td>
+</tr>
+<tr>
+<td>repositoryCache.(svn, git).parameters.X</td>
+<td>Custom parameters for git-daemon and svnserve</td>
+<td>undefined</td>
 </tr>
 <tr>
 <td>proxySettings.enabled</td>
@@ -416,12 +423,11 @@ SOFTWARE.</p>
 </blockquote>
       </section>
       <footer>
-        <p>This project is maintained by <a href="https://github.com/Hacklone">Hacklone</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
