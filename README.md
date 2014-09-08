@@ -125,7 +125,7 @@ Must be a valid JSON
 | proxySettings.tunnel                       | Use tunnel?                                                                          | false                                 |
 | log4js.enabled                             | Use log4js ?                                                                         | false                                 |
 | log4js.configPath                          | Log4js configuration file. See: log4js-node for configuration options                | none                                  |
-
+| packageStore                               | Specify a node-module to be used as a custom package store                           | none                                  |
 
 
 
