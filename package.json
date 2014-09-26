@@ -1,51 +1,52 @@
 {
-    "name": "private-bower",
-    "version": "0.5.3",
-    "author": "Hacklone <toakak@gmail.com>",
-    "description": "A simple private bower registry",
-    "main": "./lib/private-bower",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/Hacklone/private-bower.git"
-    },
-    "keywords": [
-        "bower",
-        "private",
-        "registry",
-        "repository",
-        "repo",
-        "cache",
-        "git",
-        "svn",
-        "package"
-    ],
-    "scripts": {
-        "start": "node ./bin/private-bower"
-    },
-    "dependencies": {
-	    "body-parser": "1.3.0",
-        "q": "1.0.x",
-        "mkdirp": "0.5.x",
-        "colors": "0.6.x",
-        "express": "3.x.x",
-        "optimist": "0.5.x",
-        "node-rest-client" : "1.0.0",
-        "log4js": "0.6.14",
-        "moment": "2.7.0"
-    },
-    "bugs": {
-        "url": "https://github.com/Hacklone/private-bower/issues"
-    },
-    "homepage": "http://hacklone.github.io/private-bower",
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "https://github.com/Hacklone/private-bower/raw/master/LICENSE"
-        }
-    ],
-    "analyze": false,
-    "preferGlobal": "true",
-    "bin": {
-        "private-bower": "./bin/private-bower"
+  "name": "private-bower",
+  "version": "0.5.3",
+  "author": "Hacklone <toakak@gmail.com>",
+  "description": "A simple private bower registry",
+  "main": "./lib/private-bower",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Hacklone/private-bower.git"
+  },
+  "keywords": [
+    "bower",
+    "private",
+    "registry",
+    "repository",
+    "repo",
+    "cache",
+    "git",
+    "svn",
+    "package"
+  ],
+  "scripts": {
+    "start": "node ./bin/private-bower"
+  },
+  "dependencies": {
+    "body-parser": "1.3.0",
+    "colors": "0.6.x",
+    "express": "3.x.x",
+    "log4js": "0.6.14",
+    "mkdirp": "0.5.x",
+    "moment": "2.7.0",
+    "node-rest-client": "1.0.0",
+    "optimist": "0.5.x",
+    "q": "1.0.x",
+    "tmp": "0.0.24"
+  },
+  "bugs": {
+    "url": "https://github.com/Hacklone/private-bower/issues"
+  },
+  "homepage": "http://hacklone.github.io/private-bower",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Hacklone/private-bower/raw/master/LICENSE"
     }
+  ],
+  "analyze": false,
+  "preferGlobal": "true",
+  "bin": {
+    "private-bower": "./bin/private-bower"
+  }
 }
