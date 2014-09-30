@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <title>Private Bower Registry</title>
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="animate.min.css">
     <link rel="stylesheet" href="private-bower.css">
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="angular-animate.min.js"></script>
 
     <script src="private-bower.js"></script>
 </head>
@@ -60,7 +60,7 @@
                     <div>
                         <div>
                             <h3>
-                                <a href="{{ package.repo.replace('git:', 'http:') }}" target="_blank">
+                                <a href="{{ package.url.replace('git:', 'http:') }}" target="_blank">
                                     {{ package.name }}
                                 </a>
                             </h3>
