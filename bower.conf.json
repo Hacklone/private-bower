@@ -1,6 +1,7 @@
 {
     "port": 5678,
     "registryFile": "./bowerRepository.json",
+    "timeout": 144000,
     "disablePublic": false,
     "publicRegistry": "http://bower.herokuapp.com/packages/",
     "authentication": {

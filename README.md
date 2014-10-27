@@ -61,6 +61,7 @@ Must be a valid JSON
 {
     "port": 5678,
     "registryFile": "./bowerRepository.json",
+    "timeout": 144000,
     "disablePublic": false,
     "publicRegistry": "http://bower.herokuapp.com/packages/",
     "authentication": {
@@ -105,6 +106,7 @@ Must be a valid JSON
 |--------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------|
 | port                                       | Port on which the private bower server will listen                                   | 5678                                  |
 | registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
+| timeout                                    | server package timeout                                                               | 144 000                               |
 | disablePublic                              | Disable fallback feature for public packages                                         | false                                 |
 | publicRegistry                             | Public bower registry's url                                                          | http://bower.herokuapp.com/packages/  |
 | authentication.enabled                     | Authentication enabled for registering packages                                      | false                                 |
