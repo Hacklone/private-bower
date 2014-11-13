@@ -17,6 +17,7 @@ A simple private bower registry for private package handling.
   - [Register packages](#register-packages)
   - [Remove package](#remove-package)
   - [Remove packages](#remove-packages)
+  - [Restart server](#restart-server)
   - [Authentication](#authentication)
   - [Log4js configuration examples](#log4js-configuration-examples)
 - [License](#license)
@@ -174,6 +175,10 @@ POST
 > bower-server:5678/removePackages
 
 > { "packages": ["package-name"] }
+
+##Restart server
+POST
+> bower-server:5678/restart
 
 ##Authentication
 
