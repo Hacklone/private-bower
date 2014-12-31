@@ -1,8 +1,9 @@
 [npm-url]: https://npmjs.org/package/private-bower
 [npm-image]: https://img.shields.io/npm/v/private-bower.svg
+[downloads-image]: https://img.shields.io/npm/dm/private-bower.svg
 
-private-bower [![NPM version][npm-image]][npm-url]
-=============
+private-bower [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+============
 
 A simple private bower registry for private package handling.
 
