@@ -1,6 +1,7 @@
 {
     "port": 5678,
     "registryFile": "./bowerRepository.json",
+    "registryFilePublic": "./bowerRepositoryPublic.json",
     "timeout": 144000,
     "disablePublic": false,
     "publicRegistry": "http://bower.herokuapp.com/packages/",
@@ -11,7 +12,7 @@
     "repositoryCache": {
         "cachePrivate": false,
         "git": {
-            "enabled": false,
+            "enabled": true,
             "cacheDirectory": "./gitRepoCache",
             "host": "localhost",
             "port": 6789,

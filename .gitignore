@@ -1,2 +1,6 @@
 node_modules/
 .idea/
+.c9/
+cheese.log
+pants.log
+tmp-test.log

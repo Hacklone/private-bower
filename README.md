@@ -1,8 +1,10 @@
 [npm-url]: https://npmjs.org/package/private-bower
 [npm-image]: https://img.shields.io/npm/v/private-bower.svg
 [downloads-image]: https://img.shields.io/npm/dm/private-bower.svg
+[codeship-url]: https://codeship.com/projects/54990
+[codeship-image]: https://img.shields.io/codeship/662b04e0-7427-0132-ff21-2aca0eeadc1e/master.svg
 
-private-bower [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+private-bower [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]  [![Tests][codeship-image]][codeship-url]
 ============
 
 A simple private bower registry for private package handling.
@@ -66,6 +68,7 @@ Must be a valid JSON
 {
     "port": 5678,
     "registryFile": "./bowerRepository.json",
+    "registryFilePublic": "./bowerRepositoryPublic.json",
     "timeout": 144000,
     "disablePublic": false,
     "publicRegistry": "http://bower.herokuapp.com/packages/",
@@ -111,6 +114,7 @@ Must be a valid JSON
 |--------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------|
 | port                                       | Port on which the private bower server will listen                                   | 5678                                  |
 | registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
+| registryFilePublic                         | File for persisting public packages (must be a valid json)                           | ./bowerRepositoryPublic.json          |
 | timeout                                    | server package timeout                                                               | 144 000                               |
 | disablePublic                              | Disable fallback feature for public packages                                         | false                                 |
 | publicRegistry                             | Public bower registry's url                                                          | http://bower.herokuapp.com/packages/  |
@@ -144,7 +148,12 @@ Convenient way for viewing your packages in a browser
 
 ##Project
 Create .bowerrc file with content:
-> { "registry": "http://yourPrivateBowerRepo:5678" }
+```json
+{
+  "registry": "http://yourPrivateBowerRepo:5678",
+  "timeout": 300000
+}
+```
 
 ##List packages
 GET
@@ -191,6 +200,7 @@ Authentication can be enabled for the following features:
 *   Register packages
 *   Remove package
 *   Remove packages
+*   Restart server
 
 Add ```Auth-Key``` header to request.
 > Auth-Key = password
