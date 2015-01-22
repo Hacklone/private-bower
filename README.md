@@ -111,6 +111,7 @@ Must be a valid JSON
 |--------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------|
 | port                                       | Port on which the private bower server will listen                                   | 5678                                  |
 | registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
+| registryFilePublic                         | File for persisting public packages (must be a valid json)                           | ./bowerRepositoryPublic.json          |
 | timeout                                    | server package timeout                                                               | 144 000                               |
 | disablePublic                              | Disable fallback feature for public packages                                         | false                                 |
 | publicRegistry                             | Public bower registry's url                                                          | http://bower.herokuapp.com/packages/  |
@@ -191,6 +192,7 @@ Authentication can be enabled for the following features:
 *   Register packages
 *   Remove package
 *   Remove packages
+*   Restart server
 
 Add ```Auth-Key``` header to request.
 > Auth-Key = password
