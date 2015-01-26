@@ -145,7 +145,12 @@ Convenient way for viewing your packages in a browser
 
 ##Project
 Create .bowerrc file with content:
-> { "registry": "http://yourPrivateBowerRepo:5678" }
+```json
+{
+  "registry": "http://yourPrivateBowerRepo:5678",
+  "timeout": 300000
+}
+```
 
 ##List packages
 GET
