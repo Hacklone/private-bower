@@ -4,3 +4,5 @@ node_modules/
 cheese.log
 pants.log
 tmp-test.log
+bin/*.json
+bin/*Cache
