@@ -38,8 +38,10 @@
     "gulp": "3.8.11",
     "gulp-mocha": "^2.0.0",
     "mockery": "1.4.0",
+    "run-sequence": "^1.0.2",
     "sinon": "^1.14.1",
-    "sinon-chai": "^2.7.0"
+    "sinon-chai": "^2.7.0",
+    "superagent": "^1.1.0"
   },
   "bugs": {
     "url": "https://github.com/Hacklone/private-bower/issues"
