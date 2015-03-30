@@ -167,25 +167,29 @@ GET
 
 or
 POST
-> bower-server:5678/registerPackage
+> bower-server:5678/packages
 
-> { "name": "package-name", "repo": "git://repoPath" }
+> { "name": "package-name", "url": "git://repoPath" }
+
+or
+POST
+> bower-server:5678/packages/\<package name\>
+
+> { "url": "git://repoPath" }
 
 ##Register packages
 POST
-> bower-server:5678/registerPackages
+> bower-server:5678/packages
 
-> { "packages": [ { "name": "package-name", "repo": "git://repoPath" } ] }
+> { "packages": [ { "name": "package-name", "url": "git://repoPath" } ] }
 
 ##Remove package
-POST
-> bower-server:5678/removePackage
-
-> { "name": "package-name" }
+DELETE
+> bower-server:5678/packages/\<package name\>
 
 ##Remove packages
-POST
-> bower-server:5678/removePackages
+DELETE
+> bower-server:5678/packages
 
 > { "packages": ["package-name"] }
 
