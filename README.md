@@ -27,6 +27,7 @@ A simple private bower registry for private package handling.
   - [Authentication](#authentication)
   - [Log4js configuration examples](#log4js-configuration-examples)
 - [License](#license)
+- [Tips for usage](#tips-for-usage)
 
 #Features
 
@@ -217,6 +218,14 @@ Add ```Auth-Key``` header to request.
 >Console will write the logging to the console in the log4js format.
 >You need to set the replaceConsole to true if you want to write the logging to the log4j appenders.
 >See github.com/nomiddlename/log4js-node for more information
+
+#Tips for usage
+##Server as a service
+- [Installing on Ubuntu](https://github.com/Hacklone/private-bower/wiki/Installing%20on%20Ubuntu)
+- [Install as a Windows service](https://github.com/Hacklone/private-bower/wiki/Install%20as%20a%20Windows%20service)
+
+##Use behind proxy
+> git config --global url."https://".insteadOf git://
 
 #License
 > The MIT License (MIT)
