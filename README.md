@@ -6,6 +6,7 @@
 
 private-bower [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]  [![Tests][codeship-image]][codeship-url]
 ============
+Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href="https://twitter.com/hashtag/private_bower?src=hash">#private_bower</a>
 
 A simple private bower registry for private package handling.
 
