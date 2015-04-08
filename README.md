@@ -6,6 +6,8 @@
 
 private-bower [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]  [![Tests][codeship-image]][codeship-url]
 ============
+<img src="https://raw.githubusercontent.com/Hacklone/private-bower/1.0.0/site/logo.png" alt="private-bower" width="250" height="250" />
+
 Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href="https://twitter.com/hashtag/private_bower?src=hash">#private_bower</a>
 
 A simple private bower registry for private package handling.
