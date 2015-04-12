@@ -51,7 +51,7 @@ module.exports = function() {
     function _stop() {
         server.shutDown(true);
 
-        require('../../lib/packageStore').packages = {};
+        require('../../lib/service/packageStores/privatePackageStore').packages = {};
 
         clearSandbox();
 
