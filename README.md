@@ -189,7 +189,7 @@ POST
 POST
 > bower-server:5678/packages
 
-> { "packages": [ { "name": "package-name", "url": "git://repoPath" } ] }
+> [ { "name": "package-name", "url": "git://repoPath" } ]
 
 ##Remove package
 DELETE
@@ -199,7 +199,7 @@ DELETE
 DELETE
 > bower-server:5678/packages
 
-> { "packages": ["package-name"] }
+> ["package-name"]
 
 ##Restart server
 POST

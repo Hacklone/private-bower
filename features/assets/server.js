@@ -35,7 +35,7 @@ module.exports = function() {
             var config = JSON.parse(fs.readFileSync(originalConfigPath).toString());
 
             if(configurationModifier) {
-                configurationModifier(config);
+                config = configurationModifier(config);
             }
 
             fs.writeFileSync(configPath, JSON.stringify(config, null, '    '));
@@ -49,7 +49,10 @@ module.exports = function() {
     }
 
     function _stop() {
-        server.shutDown(true);
+        try {
+            server.shutDown(true);
+        }
+        catch(e) {}
 
         require('../../lib/service/packageStores/privatePackageStore').packages = {};
 

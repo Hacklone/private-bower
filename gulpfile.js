@@ -23,5 +23,8 @@ gulp.task('feature-test', function() {
     ];
 
     return gulp.src(files, {read: false})
-        .pipe(mocha({reporter: 'nyan'}));
+        .pipe(mocha({
+            timeout: 6000,
+            reporter: 'nyan'
+        }));
 });

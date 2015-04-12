@@ -4,51 +4,67 @@ var request = require('superagent');
 module.exports = function() {
     var baseUrl = 'http://localhost:5678';
 
-    function _get(url) {
+    function _get(url, headers) {
         return new Promise(function(resolve, reject) {
-            request
-                .get(baseUrl + url)
-                .end(function(err, res) {
-                    if(err) {
-                        reject(res, err);
-                    }
-                    else {
-                        resolve(res);
-                    }
-                });
+            var req = request.get(baseUrl + url);
+
+            _setHeaders(req, headers);
+
+            req.end(function(err, res) {
+                if(err) {
+                    reject(res, err);
+                }
+                else {
+                    resolve(res);
+                }
+            });
         });
     }
 
-    function _post(url, data) {
+    function _post(url, data, headers) {
         return new Promise(function(resolve, reject) {
-            request
+            var req = request
                 .post(baseUrl + url)
-                .send(data)
-                .end(function(err, res) {
-                    if(err) {
-                        reject(res, err);
-                    }
-                    else {
-                        resolve(res);
-                    }
-                });
+                .send(data);
+
+            _setHeaders(req, headers);
+
+            req.end(function(err, res) {
+                if(err) {
+                    reject(res, err);
+                }
+                else {
+                    resolve(res);
+                }
+            });
         });
     }
 
-    function _delete(url, data) {
+    function _delete(url, data, headers) {
         return new Promise(function(resolve, reject) {
-            request
-                .delete(baseUrl + url)
-                .send(data)
-                .end(function(err, res) {
-                    if(err) {
-                        reject(res, err);
-                    }
-                    else {
-                        resolve(res);
-                    }
-                });
+            var req = request
+                .del(baseUrl + url)
+                .send(data);
+
+            _setHeaders(req, headers);
+
+            req.end(function(err, res) {
+                if(err) {
+                    reject(res, err);
+                }
+                else {
+                    resolve(res);
+                }
+            });
         });
+    }
+
+    function _setHeaders(request, headers) {
+        for(var prop in headers) {
+            if(headers.hasOwnProperty(prop)) {
+                request.set(prop, headers[prop]);
+            }
+        }
     }
 
     return {

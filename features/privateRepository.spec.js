@@ -71,8 +71,7 @@ describe('PrivateRepository', function() {
         });
 
         it('should register multiple packages', function(done) {
-            api.post('/packages', {
-                packages: [
+            api.post('/packages', [
                     {
                         name: 'testPackage3',
                         url: 'git://something.com/testRepoUrl3.git'
@@ -81,9 +80,7 @@ describe('PrivateRepository', function() {
                         name: 'testPackage4',
                         url: 'git://something.com/testRepoUrl4.git'
                     }
-                ]
-
-            })
+                ])
                 .then(tools.getPackages)
                 .then(loaded, loaded);
 
