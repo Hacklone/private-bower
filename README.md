@@ -2,11 +2,11 @@
 [npm-image]: https://img.shields.io/npm/v/private-bower.svg
 [downloads-image]: https://img.shields.io/npm/dm/private-bower.svg
 [codeship-url]: https://codeship.com/projects/54990
-[codeship-image]: https://img.shields.io/codeship/662b04e0-7427-0132-ff21-2aca0eeadc1e/1.0.0.svg
+[codeship-image]: https://img.shields.io/codeship/662b04e0-7427-0132-ff21-2aca0eeadc1e/master.svg
 
 private-bower [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]  [![Tests][codeship-image]][codeship-url]
 ============
-<img src="https://raw.githubusercontent.com/Hacklone/private-bower/1.0.0/site/logo.png" alt="private-bower" width="250" height="250" />
+<img src="https://raw.githubusercontent.com/Hacklone/private-bower/master/site/logo.png" alt="private-bower" width="250" height="250" />
 
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XD9FKUJYSPP74" target="_blank">
   <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" />
@@ -43,6 +43,8 @@ A simple private bower registry for private package handling.
 *   Cache public registry
 *   Cache public git repositories
 *   Cache public svn repositories
+*   Blacklist public packages
+*   Whitelist public packages
 *   Web UI
 
 #Features to come
