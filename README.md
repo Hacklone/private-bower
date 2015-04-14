@@ -76,10 +76,14 @@ Must be a valid JSON
 {
     "port": 5678,
     "registryFile": "./bowerRepository.json",
-    "registryFilePublic": "./bowerRepositoryPublic.json",
     "timeout": 144000,
-    "disablePublic": false,
-    "publicRegistry": "http://bower.herokuapp.com/packages/",
+    "public": {
+        "disabled": false,
+        "registry": "http://bower.herokuapp.com/packages/",
+        "registryFile": "./bowerRepositoryPublic.json",
+        "whitelist": [],
+        "blacklist": []
+    },
     "authentication": {
         "enabled": false,
         "key": "password"
@@ -122,10 +126,12 @@ Must be a valid JSON
 |--------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------|
 | port                                       | Port on which the private bower server will listen                                   | 5678                                  |
 | registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
-| registryFilePublic                         | File for persisting public packages (must be a valid json)                           | ./bowerRepositoryPublic.json          |
 | timeout                                    | server package timeout                                                               | 144 000                               |
-| disablePublic                              | Disable fallback feature for public packages                                         | false                                 |
-| publicRegistry                             | Public bower registry's url                                                          | http://bower.herokuapp.com/packages/  |
+| public.disabled                            | Disable fallback feature for public packages                                         | false                                 |
+| public.registry                            | Public bower registry's url                                                          | http://bower.herokuapp.com/packages/  |
+| public.registryFile                        | File for persisting public packages (must be a valid json)                           | ./bowerRepositoryPublic.json          |
+| public.whitelist                           | Define public packages that are allowed to be installed                              | \[\]                                  |
+| public.blacklist                           | Define public packages that are not allowed to be installed                          | \[\]                                  |
 | authentication.enabled                     | Authentication enabled for registering packages                                      | false                                 |
 | authentication.key                         | Authentication key (Auth-Key header)                                                 | password                              |
 | repositoryCache.(svn, git).enabled         | Public repository caching enabled                                                    | false                                 |

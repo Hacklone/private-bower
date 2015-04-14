@@ -1,10 +1,14 @@
 {
     "port": 5678,
     "registryFile": "./bowerRepository.json",
-    "registryFilePublic": "./bowerRepositoryPublic.json",
     "timeout": 144000,
-    "disablePublic": false,
-    "publicRegistry": "http://bower.herokuapp.com/packages/",
+    "public": {
+        "disabled": false,
+        "registry": "http://bower.herokuapp.com/packages/",
+        "registryFile": "./bowerRepositoryPublic.json",
+        "whitelist": [],
+        "blacklist": []
+    },
     "authentication": {
         "enabled": false,
         "key": "password"
