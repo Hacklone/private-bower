@@ -8,13 +8,13 @@ private-bower [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image
 ============
 <img src="https://raw.githubusercontent.com/Hacklone/private-bower/master/site/logo.png" alt="private-bower" width="250" height="250" />
 
+The ultimate private bower server.
+
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XD9FKUJYSPP74" target="_blank">
   <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" />
 </a> 
 
 Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href="https://twitter.com/hashtag/private_bower?src=hash">#private_bower</a>
-
-A simple private bower registry for private package handling.
 
 - [Features](#features)
 - [Features to come](#features-to-come)
