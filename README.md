@@ -31,7 +31,7 @@ Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href
   - [Remove package](#remove-package)
   - [Remove packages](#remove-packages)
   - [Restart server](#restart-server)
-  - [Refresh server](#refresh-server)
+  - [Refresh caches](#refresh-caches)
   - [Authentication](#authentication)
   - [Log4js configuration examples](#log4js-configuration-examples)
 - [License](#license)
