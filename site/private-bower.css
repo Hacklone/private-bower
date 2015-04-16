@@ -1,5 +1,7 @@
 body, html {
     height: 100%;
+
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 body {
@@ -45,6 +47,22 @@ footer h4 a {
     color: #b3fcfa;
 }
 
+#logo {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+}
+
+.btn-warning {
+    background-color: #1695A3;
+    border-color: #16818f;
+}
+
+.btn-warning:hover {
+    background-color: #16b3c1;
+    border-color: #1692a0;
+}
+
 .bg-gray {
     background-color: #777;
 }
@@ -59,7 +77,7 @@ footer h4 a {
 }
 
 .jumbotron {
-    background-color: #1695A3;
+    background-color: #F4C53B;
     padding-top: 30px;
     padding-bottom: 15px;
 }
@@ -67,7 +85,10 @@ footer h4 a {
 .jumbotron h1, h2 {
     color: #ffffff;
 
-    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    text-shadow: 0 4px 0 rgba(0,0,0,.1);
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
 }
 
 .glyphicon-search {

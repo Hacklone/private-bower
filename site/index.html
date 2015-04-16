@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="private-bower.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
@@ -16,6 +17,8 @@
 <body ng-controller="mainController">
     <div id="wrap">
         <div class="jumbotron">
+            <img id="logo" class="hidden-xs animated fadeInLeft" src="logo.png">
+
             <a class="hidden-xs animated fadeInRight" href="https://github.com/Hacklone/private-bower">
                 <img style="position: absolute; top: 0; right: 0; border: 0; cursor: pointer;"
                      src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
@@ -23,7 +26,7 @@
             </a>
 
             <div class="container text-center animated fadeInDown">
-                <h1>Private Bower</h1>
+                <h1>private-bower</h1>
                 <div style="position: relative;">
                     <span class="glyphicon glyphicon-search" style="position: absolute;"></span>
                     <input ng-model="packageFilter" class="form-control search" placeholder="Search package">
