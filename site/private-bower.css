@@ -82,20 +82,26 @@ footer h4 a {
     padding-bottom: 15px;
 }
 
+.jumbotron h1 {
+    margin-bottom: 20px;
+}
+
 .jumbotron h1, h2 {
     color: #ffffff;
 
-    text-shadow: 0 4px 0 rgba(0,0,0,.1);
+    text-shadow: 0 4px 0 rgba(0, 0, 0, .1);
 
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: bold;
+
+    margin-top: 10px;
 }
 
 .glyphicon-search {
     position: absolute;
 
     margin-left: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
     color: #444;
 }
 
@@ -105,14 +111,16 @@ footer h4 a {
     width: 70%;
     max-width: 750px;
 
-    margin-top: 10px;
-
     padding-left: 30px;
     box-sizing: border-box;
 }
 
-.glyphicon {
+.keep-right {
     margin-right: 10px;
+}
+
+.keep-top {
+    margin-top: 10px;
 }
 
 .package {
@@ -145,4 +153,37 @@ footer h4 a {
     -ms-animation: fadeOutLeft 0.25s;
     -o-animation: fadeOutLeft 0.25s;
     animation: fadeOutLeft 0.25s;
+}
+
+.dialog {
+    display: block;
+}
+
+.dialog .dimmer {
+    position: fixed;
+    z-index: 2;
+
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    text-align: center;
+}
+
+.dialog .dimmer .inner {
+    display: inline-block;
+
+    min-width: 400px;
+
+    margin-top: 10%;
+
+    border: 3px solid #777;
+    border-radius: 5px;
+    background-color: #F4C53B;
+
+    padding: 20px;
 }

@@ -9,12 +9,21 @@
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="private-bower.css">
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
 
-    <script src="private-bower.js"></script>
+    <script src="modules.js"></script>
+
+    <script src="controllers/mainController.js"></script>
+    <script src="controllers/authenticationController.js"></script>
+
+    <script src="directives/dialog.js"></script>
+
+    <script src="interceptors/notAuthenticatedInterceptor.js"></script>
+
+    <script src="services/userContextService.js"></script>
 </head>
-<body ng-controller="mainController">
+<body ng-controller="mainController as mainController">
     <div id="wrap">
         <div class="jumbotron">
             <img id="logo" class="hidden-xs animated fadeInLeft" src="logo.png">
@@ -28,10 +37,13 @@
             <div class="container text-center animated fadeInDown">
                 <h1>private-bower</h1>
                 <div style="position: relative;">
-                    <span class="glyphicon glyphicon-search" style="position: absolute;"></span>
+                    <span class="glyphicon glyphicon-search keep-right" style="position: absolute;"></span>
                     <input ng-model="packageFilter" class="form-control search" placeholder="Search package">
+                    <button class="btn btn-primary" ng-click="mainController.addPackageButtonClick()" style="position: relative; top: -2px;">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
                 </div>
-                <div style="margin-top: 10px;">
+                <div class="keep-top">
                     <a href="http://hacklone.github.io/private-bower"
                        target="_blank" class="btn btn-default">
                         Docs
@@ -43,40 +55,107 @@
             </div>
         </div>
         <div class="container animated fadeInUp">
-            <div ng-if="error" class="bg-danger info-box">
-                <span class="glyphicon glyphicon-remove"></span>
+            <div ng-if="mainController.error" class="bg-danger info-box">
+                <span class="glyphicon glyphicon-remove keep-right"></span>
                 Private Bower service is down
             </div>
-            <div ng-if="packages && !packages.length" class="bg-warning info-box">
-                <span class="glyphicon glyphicon-info-sign"></span>
+            <div ng-if="mainController.packages && !mainController.packages.length" class="bg-warning info-box">
+                <span class="glyphicon glyphicon-info-sign keep-right"></span>
                 No private packages registered
                 <a href="http://github.com/Hacklone/private-bower/blob/master/README.md" target="_blank">
                     read docs about how to register packages.
                 </a>
             </div>
-            <div ng-if="!packages" class="bg-info info-box">
-                <span class="glyphicon glyphicon-info-sign"></span>
+            <div ng-if="!mainController.packages" class="bg-info info-box">
+                <span class="glyphicon glyphicon-info-sign keep-right"></span>
                 Loading Packages...
             </div>
-            <div ng-if="packages && packages.length">
-                <div ng-repeat="package in packages | filter:{ name: packageFilter }" class="package">
-                    <div>
-                        <div>
-                            <h3>
-                                <a href="{{ package.repo.replace('git:', 'http:') }}" target="_blank">
+            <div ng-if="mainController.packages && mainController.packages.length">
+                <div ng-repeat="package in mainController.packages | filter:{ name: packageFilter }" class="package container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-6">
+                            <a href="{{ package.repo.replace('git:', 'http:') }}" target="_blank">
+                                <h3 style="line-height: 1.5em">
                                     {{ package.name }}
-                                </a>
-                            </h3>
-                            <span class="pull-right">hits: {{ package.hits }}</span>
+                                </h3>
+                            </a>
                         </div>
-                        <div>
-                            <div style="margin-top: 5px;">
-                               {{ package.url }}
-                            </div>
+                        <div class="col-md-2 col-xs-2 text-right" style="line-height: 2.5em">
+                            hits: {{ package.hits }}
+                        </div>
+                        <div class="col-md-4 col-xs-4 text-right">
+                            <button class="btn btn-default"
+                                    ng-click="mainController.removePackageButtonClick(package.name)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8 col-xs-8">
+                            {{ package.url }}
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <dialog is-opened="mainController.addPackageDialogOpened">
+            <div>
+                <h2>Add package</h2>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Package Name" ng-model="packageName">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" placeholder="Package url" ng-model="packageUrl">
+                </div>
+                <div class="form-group">
+                    <button ng-click="mainController.cancelAddPackageClick()" class="btn btn-default">
+                        Cancel
+                    </button>
+                    <button ng-click="mainController.addPackage(packageName, packageUrl)" class="btn btn-primary">
+                        Add
+                    </button>
+                </div>
+                <p ng-if="mainController.addPackageError" class="bg-danger">
+                    {{ mainController.addPackageError }}
+                </p>
+            </div>
+        </dialog>
+        <dialog is-opened="mainController.removePackageDialogOpened">
+            <div>
+                <h2>Are you sure you want to delete "{{ mainController.packageToRemove }}"?</h2>
+                <div class="form-group keep-top">
+                    <button ng-click="mainController.cancelRemovePackageClick()" class="btn btn-default">
+                        Cancel
+                    </button>
+                    <button ng-click="mainController.removePackage(mainController.packageToRemove)" class="btn btn-danger">
+                        Continue
+                    </button>
+                </div>
+                <p ng-if="mainController.removePackageError" class="bg-danger">
+                    {{ mainController.removePackageError }}
+                </p>
+            </div>
+        </dialog>
+        <div ng-controller="authenticationController as authenticationController">
+            <dialog is-opened="authenticationController.authenticationDialogOpened">
+                <div>
+                    <h2>You must authenticate</h2>
+                    <div class="form-group">
+                    <input class="form-control" ng-model="authenticationToken" placeholder="Authentication token">
+                    </div>
+                    <div class="form-group">
+                        <button ng-click="authenticationController.cancelAuthentication()" class="btn btn-default">
+                            Cancel
+                        </button>
+                        <button ng-click="authenticationController.authenticate(authenticationToken)" class="btn btn-primary">
+                            Continue
+                        </button>
+                    </div>
+                    <p ng-if="authenticationController.error" class="bg-danger">
+                        {{ authenticationController.error }}
+                    </p>
+                </div>
+            </dialog>
         </div>
     </div>
     <footer>

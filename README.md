@@ -44,13 +44,10 @@ Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href
 *   Cache public registry
 *   Cache public git repositories
 *   Cache public svn repositories
+*   Web UI
+*   Web UI package management
 *   Blacklist public packages
 *   Whitelist public packages
-*   Web UI
-
-#Features to come
-
-*   Web UI management
 
 #Installation
 
