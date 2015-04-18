@@ -1,39 +1,37 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Private-bower by Hacklone</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Private-bower</h1>
-        <p class="header">A simple private bower registry</p>
+    <section class="page-header">
+      <h1 class="project-name">Private-bower</h1>
+      <h2 class="project-tagline">A simple private bower registry</h2>
+      <a href="https://github.com/Hacklone/private-bower" class="btn">View on GitHub</a>
+      <a href="https://github.com/Hacklone/private-bower/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Hacklone/private-bower/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/Hacklone/private-bower/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/Hacklone/private-bower/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/Hacklone/private-bower">View On GitHub</a></li>
-        </ul>
+    <section class="main-content">
+      <h1>
+<a id="private-bower----" class="anchor" href="#private-bower----" aria-hidden="true"><span class="octicon octicon-link"></span></a>private-bower <a href="https://npmjs.org/package/private-bower"><img src="https://img.shields.io/npm/v/private-bower.svg" alt="NPM version"></a> <a href="https://npmjs.org/package/private-bower"><img src="https://img.shields.io/npm/dm/private-bower.svg" alt="Downloads"></a>  <a href="https://codeship.com/projects/54990"><img src="https://img.shields.io/codeship/662b04e0-7427-0132-ff21-2aca0eeadc1e/master.svg" alt="Tests"></a>
+</h1>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/Hacklone">Hacklone</a></p>
+<p><img src="https://raw.githubusercontent.com/Hacklone/private-bower/master/site/logo.png" alt="private-bower" width="250" height="250"></p>
 
+<p>The ultimate private bower server.</p>
 
-      </header>
-      <section>
-        <h1>
-<a name="private-bower" class="anchor" href="#private-bower"><span class="octicon octicon-link"></span></a>private-bower</h1>
+<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=XD9FKUJYSPP74" target="_blank">
+  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif">
+</a> </p>
 
-<p>A simple private bower registry for private package handling.</p>
+<p>Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href="https://twitter.com/hashtag/private_bower?src=hash">#private_bower</a></p>
 
 <ul>
 <li><a href="#features">Features</a></li>
@@ -53,13 +51,18 @@
 <li><a href="#register-packages">Register packages</a></li>
 <li><a href="#remove-package">Remove package</a></li>
 <li><a href="#remove-packages">Remove packages</a></li>
+<li><a href="#restart-server">Restart server</a></li>
+<li><a href="#refresh-caches">Refresh caches</a></li>
 <li><a href="#authentication">Authentication</a></li>
 <li><a href="#log4js-configuration-examples">Log4js configuration examples</a></li>
 </ul>
 </li>
 <li><a href="#license">License</a></li>
-</ul><h1>
-<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h1>
+<li><a href="#tips-for-usage">Tips for usage</a></li>
+</ul>
+
+<h1>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h1>
 
 <ul>
 <li>  Register private packages</li>
@@ -68,13 +71,13 @@
 <li>  Cache public git repositories</li>
 <li>  Cache public svn repositories</li>
 <li>  Web UI</li>
-</ul><h1>
-<a name="features-to-come" class="anchor" href="#features-to-come"><span class="octicon octicon-link"></span></a>Features to come</h1>
+<li>  Web UI package management</li>
+<li>  Blacklist public packages</li>
+<li>  Whitelist public packages</li>
+</ul>
 
-<ul>
-<li>  Web UI management</li>
-</ul><h1>
-<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h1>
+<h1>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
 
 <p>Install</p>
 
@@ -97,13 +100,15 @@
 <p>If there's no private package with requested package name the servers calls through to the public bower registry.</p>
 
 <h1>
-<a name="parameters" class="anchor" href="#parameters"><span class="octicon octicon-link"></span></a>Parameters</h1>
+<a id="parameters" class="anchor" href="#parameters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parameters</h1>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>name</th>
 <th>description</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>--help</td>
@@ -114,60 +119,69 @@
 <td>path to config file (Must be a valid json)</td>
 </tr>
 </tbody>
-</table><h1>
-<a name="config-file" class="anchor" href="#config-file"><span class="octicon octicon-link"></span></a>Config file</h1>
+</table>
+
+<h1>
+<a id="config-file" class="anchor" href="#config-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Config file</h1>
 
 <p>Must be a valid JSON</p>
 
-<div class="highlight highlight-javascript"><pre><span class="p">{</span>
-    <span class="s2">"port"</span><span class="o">:</span> <span class="mi">5678</span><span class="p">,</span>
-    <span class="s2">"registryFile"</span><span class="o">:</span> <span class="s2">"./bowerRepository.json"</span><span class="p">,</span>
-    <span class="s2">"disablePublic"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="s2">"publicRegistry"</span><span class="o">:</span> <span class="s2">"http://bower.herokuapp.com/packages/"</span><span class="p">,</span>
-    <span class="s2">"authentication"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"password"</span>
-    <span class="p">},</span>
-    <span class="s2">"repositoryCache"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"cachePrivate"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="s2">"git"</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="s2">"cacheDirectory"</span><span class="o">:</span> <span class="s2">"./gitRepoCache"</span><span class="p">,</span>
-            <span class="s2">"host"</span><span class="o">:</span> <span class="s2">"localhost"</span><span class="p">,</span>
-            <span class="s2">"port"</span><span class="o">:</span> <span class="mi">6789</span><span class="p">,</span>
-            <span class="s2">"publicAccessURL"</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="s2">"refreshTimeout"</span><span class="o">:</span> <span class="mi">10</span>
-        <span class="p">},</span>
-        <span class="s2">"svn"</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-            <span class="s2">"cacheDirectory"</span><span class="o">:</span> <span class="s2">"./svnRepoCache"</span><span class="p">,</span>
-            <span class="s2">"host"</span><span class="o">:</span> <span class="s2">"localhost"</span><span class="p">,</span>
-            <span class="s2">"port"</span><span class="o">:</span> <span class="mi">7891</span><span class="p">,</span>
-            <span class="s2">"publicAccessURL"</span> <span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-            <span class="s2">"refreshTimeout"</span><span class="o">:</span> <span class="mi">10</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">"proxySettings"</span> <span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="s2">"host"</span><span class="o">:</span> <span class="s2">"proxy"</span><span class="p">,</span>
-        <span class="s2">"username"</span><span class="o">:</span> <span class="s2">"name"</span><span class="p">,</span>
-        <span class="s2">"password"</span> <span class="o">:</span> <span class="s2">"pass"</span><span class="p">,</span>
-        <span class="s2">"port"</span><span class="o">:</span> <span class="mi">8080</span><span class="p">,</span>
-        <span class="s2">"tunnel"</span><span class="o">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="s2">"log4js"</span> <span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"enabled"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-        <span class="s2">"configPath"</span> <span class="o">:</span> <span class="s2">"log4js.conf.json"</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
+<div class="highlight highlight-javascript"><pre>{
+    <span class="pl-s"><span class="pl-pds">"</span>port<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">5678</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>registryFile<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>./bowerRepository.json<span class="pl-pds">"</span></span>,
+    <span class="pl-s"><span class="pl-pds">"</span>timeout<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">144000</span>,
+    <span class="pl-s"><span class="pl-pds">"</span>public<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>disabled<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>registry<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>http://bower.herokuapp.com/packages/<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>registryFile<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>./bowerRepositoryPublic.json<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>whitelist<span class="pl-pds">"</span></span><span class="pl-k">:</span> [],
+        <span class="pl-s"><span class="pl-pds">"</span>blacklist<span class="pl-pds">"</span></span><span class="pl-k">:</span> []
+    },
+    <span class="pl-s"><span class="pl-pds">"</span>authentication<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>enabled<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>key<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span>
+    },
+    <span class="pl-s"><span class="pl-pds">"</span>repositoryCache<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>cachePrivate<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>git<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+            <span class="pl-s"><span class="pl-pds">"</span>enabled<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>cacheDirectory<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>./gitRepoCache<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>host<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>localhost<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>port<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">6789</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>publicAccessURL<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-c1">null</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>refreshTimeout<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">10</span>
+        },
+        <span class="pl-s"><span class="pl-pds">"</span>svn<span class="pl-pds">"</span></span><span class="pl-k">:</span> {
+            <span class="pl-s"><span class="pl-pds">"</span>enabled<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>cacheDirectory<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>./svnRepoCache<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>host<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>localhost<span class="pl-pds">"</span></span>,
+            <span class="pl-s"><span class="pl-pds">"</span>port<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">7891</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>publicAccessURL<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-c1">null</span>,
+            <span class="pl-s"><span class="pl-pds">"</span>refreshTimeout<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">10</span>
+        }
+    },
+    <span class="pl-s"><span class="pl-pds">"</span>proxySettings<span class="pl-pds">"</span></span> <span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>enabled<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>host<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>proxy<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>username<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>pass<span class="pl-pds">"</span></span>,
+        <span class="pl-s"><span class="pl-pds">"</span>port<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">8080</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>tunnel<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>
+    },
+    <span class="pl-s"><span class="pl-pds">"</span>log4js<span class="pl-pds">"</span></span> <span class="pl-k">:</span> {
+        <span class="pl-s"><span class="pl-pds">"</span>enabled<span class="pl-pds">"</span></span><span class="pl-k">:</span> <span class="pl-c1">false</span>,
+        <span class="pl-s"><span class="pl-pds">"</span>configPath<span class="pl-pds">"</span></span> <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>log4js.conf.json<span class="pl-pds">"</span></span>
+    }
+}</pre></div>
 
 <table>
-<thead><tr>
+<thead>
+<tr>
 <th>name</th>
 <th>description</th>
 <th>default</th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td>port</td>
@@ -180,14 +194,34 @@
 <td>./bowerRepository.json</td>
 </tr>
 <tr>
-<td>disablePublic</td>
+<td>timeout</td>
+<td>server package timeout</td>
+<td>144 000</td>
+</tr>
+<tr>
+<td>public.disabled</td>
 <td>Disable fallback feature for public packages</td>
 <td>false</td>
 </tr>
 <tr>
-<td>publicRegistry</td>
+<td>public.registry</td>
 <td>Public bower registry's url</td>
 <td><a href="http://bower.herokuapp.com/packages/">http://bower.herokuapp.com/packages/</a></td>
+</tr>
+<tr>
+<td>public.registryFile</td>
+<td>File for persisting public packages (must be a valid json)</td>
+<td>./bowerRepositoryPublic.json</td>
+</tr>
+<tr>
+<td>public.whitelist</td>
+<td>Define public packages that are allowed to be installed</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>public.blacklist</td>
+<td>Define public packages that are not allowed to be installed</td>
+<td>[]</td>
 </tr>
 <tr>
 <td>authentication.enabled</td>
@@ -280,11 +314,13 @@
 <td>none</td>
 </tr>
 </tbody>
-</table><h1>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h1>
+</table>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
 
 <h2>
-<a name="web-interface" class="anchor" href="#web-interface"><span class="octicon octicon-link"></span></a>Web interface</h2>
+<a id="web-interface" class="anchor" href="#web-interface" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web interface</h2>
 
 <p>Convenient way for viewing your packages in a browser</p>
 
@@ -293,16 +329,17 @@
 </blockquote>
 
 <h2>
-<a name="project" class="anchor" href="#project"><span class="octicon octicon-link"></span></a>Project</h2>
+<a id="project" class="anchor" href="#project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project</h2>
 
 <p>Create .bowerrc file with content:</p>
 
-<blockquote>
-<p>{ "registry": "http://yourPrivateBowerRepo:5678" }</p>
-</blockquote>
+<div class="highlight highlight-json"><pre>{
+  <span class="pl-s"><span class="pl-pds">"</span>registry<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>http://yourPrivateBowerRepo:5678<span class="pl-pds">"</span></span>,
+  <span class="pl-s"><span class="pl-pds">"</span>timeout<span class="pl-pds">"</span></span>: <span class="pl-c1">300000</span>
+}</pre></div>
 
 <h2>
-<a name="list-packages" class="anchor" href="#list-packages"><span class="octicon octicon-link"></span></a>List packages</h2>
+<a id="list-packages" class="anchor" href="#list-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>List packages</h2>
 
 <p>GET</p>
 
@@ -311,14 +348,14 @@
 </blockquote>
 
 <h2>
-<a name="search-packages" class="anchor" href="#search-packages"><span class="octicon octicon-link"></span></a>Search packages</h2>
+<a id="search-packages" class="anchor" href="#search-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Search packages</h2>
 
 <blockquote>
 <p>bower search [packageName]</p>
 </blockquote>
 
 <h2>
-<a name="register-package" class="anchor" href="#register-package"><span class="octicon octicon-link"></span></a>Register package</h2>
+<a id="register-package" class="anchor" href="#register-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Register package</h2>
 
 <blockquote>
 <p>bower register [packageName] [gitRepo]</p>
@@ -328,46 +365,71 @@
 POST</p>
 
 <blockquote>
-<p>bower-server:5678/registerPackage</p>
+<p>bower-server:5678/packages</p>
 
-<p>{ "name": "package-name", "repo": "git://repoPath" }</p>
+<p>{ "name": "package-name", "url": "git://repoPath" }</p>
+</blockquote>
+
+<p>or
+POST</p>
+
+<blockquote>
+<p>bower-server:5678/packages/&lt;package name&gt;</p>
+
+<p>{ "url": "git://repoPath" }</p>
 </blockquote>
 
 <h2>
-<a name="register-packages" class="anchor" href="#register-packages"><span class="octicon octicon-link"></span></a>Register packages</h2>
+<a id="register-packages" class="anchor" href="#register-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Register packages</h2>
 
 <p>POST</p>
 
 <blockquote>
-<p>bower-server:5678/registerPackages</p>
+<p>bower-server:5678/packages</p>
 
-<p>{ "packages": [ { "name": "package-name", "repo": "git://repoPath" } ] }</p>
+<p>[ { "name": "package-name", "url": "git://repoPath" } ]</p>
 </blockquote>
 
 <h2>
-<a name="remove-package" class="anchor" href="#remove-package"><span class="octicon octicon-link"></span></a>Remove package</h2>
+<a id="remove-package" class="anchor" href="#remove-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remove package</h2>
+
+<p>DELETE</p>
+
+<blockquote>
+<p>bower-server:5678/packages/&lt;package name&gt;</p>
+</blockquote>
+
+<h2>
+<a id="remove-packages" class="anchor" href="#remove-packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remove packages</h2>
+
+<p>DELETE</p>
+
+<blockquote>
+<p>bower-server:5678/packages</p>
+
+<p>["package-name"]</p>
+</blockquote>
+
+<h2>
+<a id="restart-server" class="anchor" href="#restart-server" aria-hidden="true"><span class="octicon octicon-link"></span></a>Restart server</h2>
 
 <p>POST</p>
 
 <blockquote>
-<p>bower-server:5678/removePackage</p>
-
-<p>{ "name": "package-name" }</p>
+<p>bower-server:5678/restart</p>
 </blockquote>
 
 <h2>
-<a name="remove-packages" class="anchor" href="#remove-packages"><span class="octicon octicon-link"></span></a>Remove packages</h2>
+<a id="refresh-caches" class="anchor" href="#refresh-caches" aria-hidden="true"><span class="octicon octicon-link"></span></a>Refresh caches</h2>
 
 <p>POST</p>
 
 <blockquote>
-<p>bower-server:5678/removePackages</p>
-
-<p>{ "packages": ["package-name"] }</p>
+<p>bower-server:5678/refresh</p>
 </blockquote>
 
 <h2>
-<a name="authentication" class="anchor" href="#authentication"><span class="octicon octicon-link"></span></a>Authentication</h2>
+<a id="authentication" class="anchor" href="#authentication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authentication</h2>
 
 <p>Authentication can be enabled for the following features:</p>
 
@@ -376,14 +438,17 @@ POST</p>
 <li>  Register packages</li>
 <li>  Remove package</li>
 <li>  Remove packages</li>
-</ul><p>Add <code>Auth-Key</code> header to request.</p>
+<li>  Restart server</li>
+</ul>
+
+<p>Add <code>Auth-Key</code> header to request.</p>
 
 <blockquote>
 <p>Auth-Key = password</p>
 </blockquote>
 
 <h2>
-<a name="log4js-configuration" class="anchor" href="#log4js-configuration"><span class="octicon octicon-link"></span></a>Log4js configuration</h2>
+<a id="log4js-configuration" class="anchor" href="#log4js-configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Log4js configuration</h2>
 
 <blockquote>
 <p>There are two appenders set in the example configuration.
@@ -395,7 +460,25 @@ See github.com/nomiddlename/log4js-node for more information</p>
 </blockquote>
 
 <h1>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h1>
+<a id="tips-for-usage" class="anchor" href="#tips-for-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tips for usage</h1>
+
+<h2>
+<a id="server-as-a-service" class="anchor" href="#server-as-a-service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Server as a service</h2>
+
+<ul>
+<li><a href="https://github.com/Hacklone/private-bower/wiki/Installing%20on%20Ubuntu">Installing on Ubuntu</a></li>
+<li><a href="https://github.com/Hacklone/private-bower/wiki/Install%20as%20a%20Windows%20service">Install as a Windows service</a></li>
+</ul>
+
+<h2>
+<a id="use-behind-proxy" class="anchor" href="#use-behind-proxy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use behind proxy</h2>
+
+<blockquote>
+<p>git config --global url."https://".insteadOf git://</p>
+</blockquote>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
 
 <blockquote>
 <p>The MIT License (MIT)</p>
@@ -421,13 +504,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</p>
 </blockquote>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Hacklone/private-bower">Private-bower</a> is maintained by <a href="https://github.com/Hacklone">Hacklone</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		          <script type="text/javascript">
+
+    </section>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -440,3 +526,4 @@ SOFTWARE.</p>
 
   </body>
 </html>
+
