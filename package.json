@@ -1,6 +1,6 @@
 {
   "name": "private-bower",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Hacklone <toakak@gmail.com>",
   "description": "A simple private bower registry",
   "main": "./bin/private-bower",
@@ -31,7 +31,8 @@
     "mkdirp": "0.5.x",
     "moment": "^2.7.0",
     "node-rest-client": "^1.0.0",
-    "optimist": "^0.5.2"
+    "optimist": "^0.5.2",
+    "path-is-absolute": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^2.2.0",
