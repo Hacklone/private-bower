@@ -74,7 +74,7 @@
                 <div ng-repeat="package in mainController.packages | filter:{ name: packageFilter }" class="package container-fluid">
                     <div class="row">
                         <div class="col-md-6 col-xs-6">
-                            <a href="{{ package.repo.replace('git:', 'http:') }}" target="_blank">
+                            <a href="{{ package.url.replace('git:', 'http:') }}" target="_blank">
                                 <h3 style="line-height: 1.5em">
                                     {{ package.name }}
                                 </h3>
