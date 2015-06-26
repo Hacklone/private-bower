@@ -7,6 +7,5 @@ tmp-test.log
 bin/*.json
 bin/*Cache
 features/sandbox/
-bowerRepository.json
 gitRepoCache/
 svnRepoCache/
