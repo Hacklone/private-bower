@@ -74,11 +74,9 @@
                 <div ng-repeat="package in mainController.packages | filter:{ name: packageFilter }" class="package container-fluid">
                     <div class="row">
                         <div class="col-md-6 col-xs-6">
-                            <a href="{{ package.url.replace('git:', 'http:') }}" target="_blank">
-                                <h3 style="line-height: 1.5em">
-                                    {{ package.name }}
-                                </h3>
-                            </a>
+                            <h3 style="line-height: 1.5em; cursor: pointer;" class="text-primary" ng-click="mainController.togglePackageDetailsOpened(package)">
+                                {{ package.name }}
+                            </h3>
                         </div>
                         <div class="col-md-2 col-xs-2 text-right" style="line-height: 2.5em">
                             hits: {{ package.hits }}
@@ -90,9 +88,30 @@
                             </button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-8 col-xs-8">
-                            {{ package.url }}
+                    <div ng-if="package.detailsOpened" class="row" style="margin-top: 20px">
+                        <div ng-if="!package.details" class="text-center">
+                            <span ng-if="!package.detailsError" class="text-info">
+                                Loading package details...
+                            </span>
+                            <span ng-if="package.detailsError" class="text-danger">
+                                Failed to load package details!
+                            </span>
+                        </div>
+                        <div ng-if="package.details" class="details">
+                            <table class="table table-condensed table-bordered" style="margin-bottom: 0;">
+                                <tr>
+                                    <td><strong>Url</strong></td>
+                                    <td>{{ package.url }}</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Details</strong></td>
+                                    <td>
+                                        <pre>
+                                            {{ package.details | json }}
+                                        </pre>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

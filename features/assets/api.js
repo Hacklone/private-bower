@@ -12,7 +12,10 @@ module.exports = function() {
 
             req.end(function(err, res) {
                 if(err) {
-                    reject(res, err);
+                    reject({
+                        response: res, 
+                        error: err
+                    });
                 }
                 else {
                     resolve(res);

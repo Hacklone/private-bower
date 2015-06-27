@@ -15,7 +15,9 @@ angular.module('PrivateBower')
             removePackageDialogOpened: false,
             removePackage: _removePackage,
             removePackageButtonClick: _removePackageButtonClick,
-            cancelRemovePackageClick: _cancelRemovePackageClick
+            cancelRemovePackageClick: _cancelRemovePackageClick,
+            
+            togglePackageDetailsOpened: _togglePackageDetailsOpened
         });
 
         _init();
@@ -76,5 +78,23 @@ angular.module('PrivateBower')
                 .error(function(error) {
                     self.removePackageError = error;
                 });
+        }
+        
+        function _togglePackageDetailsOpened(bowerPackage) {
+            bowerPackage.detailsOpened = !bowerPackage.detailsOpened;
+            
+            if(bowerPackage.detailsOpened && !bowerPackage.details) {
+                loadPackageDetails(bowerPackage);
+            }
+            
+            function loadPackageDetails(bowerPackage) {
+                $http.get('packages/' + bowerPackage.name + '/details')
+                    .success(function(details) {
+                        bowerPackage.details = details;
+                    })
+                    .error(function() {
+                        bowerPackage.detailsError = true;
+                    })
+            }
         }
     });
