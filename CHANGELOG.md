@@ -9,3 +9,9 @@
 - Added api for manually refresh repository caches ([#117](https://github.com/Hacklone/private-bower/issues/117))
 - fixed git-daemon crashes ([#112](https://github.com/Hacklone/private-bower/issues/112))
 - fixed confusing return codes ([#118](https://github.com/Hacklone/private-bower/issues/118))
+
+## 1.1.0 - 2015.06.29.
+
+- Added bower.json package details to web ui ([#109](https://github.com/Hacklone/private-bower/issues/109))
+- Make private-bower closed network friendly ([#144](https://github.com/Hacklone/private-bower/issues/144))
+- bug fix ([#148](https://github.com/Hacklone/private-bower/issues/148))
