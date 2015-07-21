@@ -245,6 +245,9 @@ Add ```Auth-Key``` header to request.
 ##Use behind proxy
 > git config --global url."https://".insteadOf git://
 
+##Calling the API
+- do not forget to set the ```Content-Type``` header to ```application/json```
+
 #License
 > The MIT License (MIT)
 
