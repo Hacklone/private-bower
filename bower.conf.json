@@ -1,5 +1,6 @@
 {
     "port": 5678,
+    "hostName": null,
     "registryFile": "./bowerRepository.json",
     "timeout": 144000,
     "public": {
