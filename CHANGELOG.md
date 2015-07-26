@@ -15,3 +15,10 @@
 - Added bower.json package details to web ui ([#109](https://github.com/Hacklone/private-bower/issues/109))
 - Make private-bower closed network friendly ([#144](https://github.com/Hacklone/private-bower/issues/144))
 - bug fix ([#148](https://github.com/Hacklone/private-bower/issues/148))
+
+## 1.1.1 - 2015.07.26.
+
+- Added help text to package detail errors ([#149](https://github.com/Hacklone/private-bower/issues/149))
+- Added process.env.PORT and process.env.IP support ([#141](https://github.com/Hacklone/private-bower/issues/141))
+- Added tip for API usage in README.md ([#154](https://github.com/Hacklone/private-bower/issues/154))
+- Registering a public package for the first time, hit count fixed ([#157](https://github.com/Hacklone/private-bower/issues/157))
