@@ -22,3 +22,8 @@
 - Added process.env.PORT and process.env.IP support ([#141](https://github.com/Hacklone/private-bower/issues/141))
 - Added tip for API usage in README.md ([#154](https://github.com/Hacklone/private-bower/issues/154))
 - Registering a public package for the first time, hit count fixed ([#157](https://github.com/Hacklone/private-bower/issues/157))
+
+## 1.1.2 - 2015.08.09.
+
+- Added configurable protocol to mirrored packages ([#161](https://github.com/Hacklone/private-bower/issues/161))
+- Fixed error flow when git cloning fails ([#156](https://github.com/Hacklone/private-bower/issues/156))

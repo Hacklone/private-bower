@@ -95,6 +95,7 @@ Must be a valid JSON
             "cacheDirectory": "./gitRepoCache",
             "host": "localhost",
             "port": 6789,
+            "protocol": "git",
             "publicAccessURL" : null,
             "refreshTimeout": 10
         },
@@ -103,6 +104,7 @@ Must be a valid JSON
             "cacheDirectory": "./svnRepoCache",
             "host": "localhost",
             "port": 7891,
+            "protocol": "svn",
             "publicAccessURL" : null,
             "refreshTimeout": 10
         }
@@ -139,6 +141,7 @@ Must be a valid JSON
 | repositoryCache.cachePrivate               | Also cache privately registered packages                                             | false                                 |
 | repositoryCache.(svn, git).host            | Server's host name for repository access                                             | localhost                             |
 | repositoryCache.(svn, git).port            | Port to open repository server on                                                    | 7891, 6789                            |
+| repositoryCache.(svn, git).protocol        | Protocol the mirrored repositories will use                                          | git, svn, https, http                 |
 | repositoryCache.(svn, git).publicAccessURL | Public address to access repository cache (useful if repository is behind an apache) | null                                  |
 | repositoryCache.(svn, git).cacheDirectory  | Directory where the public repository cache will save repositories                   | ./svnRepoCache, ./gitRepoCache        |
 | repositoryCache.(svn, git).refreshTimeout  | Time to wai between repository cache refresh (minutes)                               | 10 minutes                            |
