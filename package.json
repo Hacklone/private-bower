@@ -30,7 +30,7 @@
     "log4js": "^0.6.14",
     "mkdirp": "0.5.x",
     "moment": "^2.7.0",
-    "node-rest-client": "^1.0.0",
+    "node-rest-client": "1.5.1",
     "optimist": "^0.5.2",
     "path-is-absolute": "^1.0.0",
     "URIjs": "^1.5.0"
