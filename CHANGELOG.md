@@ -27,3 +27,10 @@
 
 - Added configurable protocol to mirrored packages ([#161](https://github.com/Hacklone/private-bower/issues/161))
 - Fixed error flow when git cloning fails ([#156](https://github.com/Hacklone/private-bower/issues/156))
+
+## 1.1.4 - 2015.08.29.
+
+- enable version consultation ([#168](https://github.com/Hacklone/private-bower/issues/168))
+- Added stdout to log message in case util.exec() fails. ([#164](https://github.com/Hacklone/private-bower/issues/164))
+- fixed JSON parse errors ([#170](https://github.com/Hacklone/private-bower/issues/170))
+- never used utils.process.env.PORT ([#159](https://github.com/Hacklone/private-bower/issues/159))
