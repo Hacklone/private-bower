@@ -126,8 +126,8 @@ Must be a valid JSON
 
 | name                                       | description                                                                          | default                               |
 |--------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------|
-| port                                       | Port on which the private bower server will listen                                   | 5678 (process.env.PORT if set to null)|
-| hostName                                   | Host name on which the private bower server will listen                              | null (process.env.IP if set to null)  |
+| port                                       | Port on which the private bower server will listen                                   | 5678 (process.env.PORT if set)|
+| hostName                                   | Host name on which the private bower server will listen                              | null (process.env.IP if set)  |
 | registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
 | timeout                                    | server package timeout                                                               | 144 000                               |
 | public.disabled                            | Disable fallback feature for public packages                                         | false                                 |
