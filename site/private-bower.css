@@ -133,6 +133,9 @@ footer h4 a {
 
     background-color: #f7f7f9;
     border: 1px solid #e1e1e8;
+    
+    -webkit-transition: all 2s;
+    transition: all 2s;
 }
 
 .package h3 {

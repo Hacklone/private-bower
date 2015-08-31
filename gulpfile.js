@@ -19,7 +19,8 @@ gulp.task('feature-test', function() {
     var files = [
         'lib/**/*.js',
         '!lib/**/*.spec.js',
-        'features/**/*.js'
+        'features/**/*.js',
+        '!features/sandbox/**/*.js'
     ];
 
     return gulp.src(files, {read: false})

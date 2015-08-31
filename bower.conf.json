@@ -1,5 +1,6 @@
 {
     "port": 5678,
+    "hostName": null,
     "registryFile": "./bowerRepository.json",
     "timeout": 144000,
     "public": {
@@ -20,6 +21,7 @@
             "cacheDirectory": "./gitRepoCache",
             "host": "localhost",
             "port": 6789,
+            "protocol": "git",
             "publicAccessURL": null,
             "refreshTimeout": 10,
             "parameters": {
@@ -32,6 +34,7 @@
             "cacheDirectory": "./svnRepoCache",
             "host": "localhost",
             "port": 7891,
+            "protocol": "svn",
             "publicAccessURL": null,
             "refreshTimeout": 10
         }

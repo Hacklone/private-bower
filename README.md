@@ -44,7 +44,7 @@ Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href
 *   Cache public registry
 *   Cache public git repositories
 *   Cache public svn repositories
-*   Web UI
+*   Web UI with package details
 *   Web UI package management
 *   Blacklist public packages
 *   Whitelist public packages
@@ -95,6 +95,7 @@ Must be a valid JSON
             "cacheDirectory": "./gitRepoCache",
             "host": "localhost",
             "port": 6789,
+            "protocol": "git",
             "publicAccessURL" : null,
             "refreshTimeout": 10
         },
@@ -103,6 +104,7 @@ Must be a valid JSON
             "cacheDirectory": "./svnRepoCache",
             "host": "localhost",
             "port": 7891,
+            "protocol": "svn",
             "publicAccessURL" : null,
             "refreshTimeout": 10
         }
@@ -124,7 +126,8 @@ Must be a valid JSON
 
 | name                                       | description                                                                          | default                               |
 |--------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------|
-| port                                       | Port on which the private bower server will listen                                   | 5678                                  |
+| port                                       | Port on which the private bower server will listen                                   | 5678 (process.env.PORT if set)|
+| hostName                                   | Host name on which the private bower server will listen                              | null (process.env.IP if set)  |
 | registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
 | timeout                                    | server package timeout                                                               | 144 000                               |
 | public.disabled                            | Disable fallback feature for public packages                                         | false                                 |
@@ -138,6 +141,7 @@ Must be a valid JSON
 | repositoryCache.cachePrivate               | Also cache privately registered packages                                             | false                                 |
 | repositoryCache.(svn, git).host            | Server's host name for repository access                                             | localhost                             |
 | repositoryCache.(svn, git).port            | Port to open repository server on                                                    | 7891, 6789                            |
+| repositoryCache.(svn, git).protocol        | Protocol the mirrored repositories will use                                          | git, svn, https, http                 |
 | repositoryCache.(svn, git).publicAccessURL | Public address to access repository cache (useful if repository is behind an apache) | null                                  |
 | repositoryCache.(svn, git).cacheDirectory  | Directory where the public repository cache will save repositories                   | ./svnRepoCache, ./gitRepoCache        |
 | repositoryCache.(svn, git).refreshTimeout  | Time to wai between repository cache refresh (minutes)                               | 10 minutes                            |
@@ -243,6 +247,9 @@ Add ```Auth-Key``` header to request.
 
 ##Use behind proxy
 > git config --global url."https://".insteadOf git://
+
+##Calling the API
+- do not forget to set the ```Content-Type``` header to ```application/json```
 
 #License
 > The MIT License (MIT)
