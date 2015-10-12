@@ -34,3 +34,7 @@
 - Added stdout to log message in case util.exec() fails. ([#164](https://github.com/Hacklone/private-bower/issues/164))
 - fixed JSON parse errors ([#170](https://github.com/Hacklone/private-bower/issues/170))
 - never used utils.process.env.PORT ([#159](https://github.com/Hacklone/private-bower/issues/159))
+
+## 1.1.5 - 2015.10.10
+
+- change registry url ([#179](https://github.com/Hacklone/private-bower/issues/179))
