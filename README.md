@@ -6,7 +6,7 @@ https://img.shields.io/npm/dt/private-bower.svg
 [codeship-url]: https://codeship.com/projects/54990
 [codeship-image]: https://img.shields.io/codeship/662b04e0-7427-0132-ff21-2aca0eeadc1e/master.svg
 
-private-bower [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]  [![Downloads][total-downloads-image]][npm-url] [![Tests][codeship-image]][codeship-url]
+private-bower [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]  [![Total Downloads][total-downloads-image]][npm-url] [![Tests][codeship-image]][codeship-url]
 ============
 <img src="https://raw.githubusercontent.com/Hacklone/private-bower/master/site/logo.png" alt="private-bower" width="250" height="250" />
 
