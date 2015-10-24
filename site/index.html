@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="vendor/bootstrap/dist/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/animate/animate.min.css">
     <link href="vendor/source-sans-pro/source-sans-pro.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="private-bower.css">
 
     <script src="vendor/angular/angular.min.js"></script>
@@ -76,6 +77,12 @@
                         <div class="col-md-6 col-xs-6">
                             <h3 style="line-height: 1.5em; cursor: pointer;" class="text-primary" ng-click="mainController.togglePackageDetailsOpened(package)">
                                 {{ package.name }}
+                                &nbsp;
+                                <a ng-href="{{ package.siteUrl }}" target="_blank"
+                                   title="Open repository's website"
+                                   style="font-size: 15px">
+                                    <i class="fa fa-external-link"></i>
+                                </a>
                             </h3>
                         </div>
                         <div class="col-md-2 col-xs-2 text-right" style="line-height: 2.5em">
@@ -94,7 +101,7 @@
                                 Loading package details...
                             </span>
                             <span ng-if="package.detailsError" class="text-danger">
-                                Failed to load package details! (Your private-bower server needs read access to this Git repository!)
+                                Failed to load package details! (Your private-bower server needs read access to this Git repository and the git repository must contain a bower.json file!)
                             </span>
                         </div>
                         <div ng-if="package.details" class="details">

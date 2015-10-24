@@ -28,7 +28,11 @@ angular.module('PrivateBower')
         function _getPackages() {
             $http.get('packages')
                 .success(function(packages) {
-                    self.packages = packages;
+                    self.packages = packages.map(function(pack) {
+                        pack.siteUrl = pack.url.replace('git://', 'https://');
+
+                        return pack;
+                    });
                 })
                 .error(function(error) {
                     self.error = true;
