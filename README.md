@@ -38,6 +38,7 @@ Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href
   - [Log4js configuration examples](#log4js-configuration-examples)
 - [License](#license)
 - [Tips for usage](#tips-for-usage)
+- [Contributing](#contributing)
 
 #Features
 
@@ -252,6 +253,9 @@ Add ```Auth-Key``` header to request.
 
 ##Calling the API
 - do not forget to set the ```Content-Type``` header to ```application/json```
+
+#Contributing
+Please read the rules of contributing on the [contribution page](https://github.com/Hacklone/private-bower/blob/master/CONTRIBUTING.md).
 
 #License
 > The MIT License (MIT)
