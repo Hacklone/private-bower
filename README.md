@@ -164,7 +164,10 @@ Must be a valid JSON
 #Usage
 
 ##Web interface
-Convenient way for viewing your packages in a browser
+Convenient way for viewing your packages in a browser.  The web interface will only list your private packages, it will 
+not list the public packages if you have a public registry enabled.  However, when searching for packages in bower, the 
+public ones will show up just fine.
+   
 > http://localhost:5678/
 
 ##Project
