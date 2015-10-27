@@ -2,7 +2,7 @@
     "appenders": [
         {
             "type": "dateFile",
-            "filename": "./logs/private-bower.log",
+            "filename": "private-bower.log",
             "pattern": "-yyyy-MM-dd",
             "alwaysIncludePattern": false
         },
