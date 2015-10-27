@@ -1,8 +1,11 @@
 {
-    "port": 5678,
-    "hostName": null,
     "registryFile": "./bowerRepository.json",
     "timeout": 144000,
+    "server": {
+        "port": 5678,
+        "hostName": null,
+        "siteBaseURL": null
+    },
     "public": {
         "disabled": false,
         "registry": "http://bower.herokuapp.com/packages",
