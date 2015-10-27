@@ -176,7 +176,7 @@ public ones will show up just fine.
 > http://localhost:5678/
 
 ##Project
-Within your project, you can create a .bowerrc file containing:
+Within your project, you will need to create a .bowerrc file containing the URL of your private bower server:
 ```json
 {
   "registry": "http://yourPrivateBowerRepo:5678",
