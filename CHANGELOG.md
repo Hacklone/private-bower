@@ -35,6 +35,11 @@
 - fixed JSON parse errors ([#170](https://github.com/Hacklone/private-bower/issues/170))
 - never used utils.process.env.PORT ([#159](https://github.com/Hacklone/private-bower/issues/159))
 
-## 1.1.5 - 2015.10.10
+## 1.1.5 - 2015.10.10.
 
 - change registry url ([#179](https://github.com/Hacklone/private-bower/issues/179))
+
+## 1.1.6 - 2015.11.08.
+
+- Added some documentation to clear up confusion regarding public registry. ([#184](https://github.com/Hacklone/private-bower/issues/184))
+- Show the git url of a package (as a link) ([#182](https://github.com/Hacklone/private-bower/issues/182))
