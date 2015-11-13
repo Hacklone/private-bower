@@ -2,5 +2,9 @@
   {
     "name": "ch.migros.shared-components",
     "url": "git@github.com:migros/ch.migros.shared-components.git"
+  },
+  {
+    "name": "migros/project-cf-deployment",
+    "url": "git@git.migros.net:agentur-smartive/net.migros.cf-deployment.git"
   }
 ]
