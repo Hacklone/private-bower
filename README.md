@@ -82,7 +82,7 @@ Must be a valid JSON
     "timeout": 144000,
     "public": {
         "disabled": false,
-        "registry": "http://bower.herokuapp.com/packages/",
+        "registry": "http://bower.herokuapp.com/packages",
         "registryFile": "./bowerRepositoryPublic.json",
         "whitelist": [],
         "blacklist": []
