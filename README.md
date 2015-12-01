@@ -78,6 +78,7 @@ Must be a valid JSON
 ```javascript
 {
     "port": 5678,
+    "hostName": null,
     "registryFile": "./bowerRepository.json",
     "timeout": 144000,
     "public": {
@@ -99,8 +100,12 @@ Must be a valid JSON
             "host": "localhost",
             "port": 6789,
             "protocol": "git",
-            "publicAccessURL" : null,
-            "refreshTimeout": 10
+            "publicAccessURL": null,
+            "refreshTimeout": 10,
+            "parameters": {
+                "timeout": 60000,
+                "max-connections": 100
+            }
         },
         "svn": {
             "enabled": false,
@@ -108,7 +113,7 @@ Must be a valid JSON
             "host": "localhost",
             "port": 7891,
             "protocol": "svn",
-            "publicAccessURL" : null,
+            "publicAccessURL": null,
             "refreshTimeout": 10
         }
     },
