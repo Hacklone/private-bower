@@ -77,9 +77,13 @@ If there's no private package with requested package name the servers calls thro
 Must be a valid JSON
 ```javascript
 {
-    "port": 5678,
     "registryFile": "./bowerRepository.json",
     "timeout": 144000,
+    "server": {
+        "port": 5678,
+        "hostName": null,
+        "siteBaseUrl": null,
+    },
     "public": {
         "disabled": false,
         "registry": "http://bower.herokuapp.com/packages",
@@ -129,8 +133,9 @@ Must be a valid JSON
 
 | name                                       | description                                                                          | default                               |
 |--------------------------------------------|--------------------------------------------------------------------------------------|---------------------------------------|
-| port                                       | Port on which the private bower server will listen                                   | 5678 (process.env.PORT if set)|
-| hostName                                   | Host name on which the private bower server will listen                              | null (process.env.IP if set)  |
+| server.port                                | Port on which the private bower server will listen                                   | 5678 (process.env.PORT if set)        |
+| server.hostName                            | Host name on which the private bower server will listen                              | null (process.env.IP if set)          |
+| server.siteBaseUrl                         | Load private bower server on a specific path, useful for using a reverse proxy       | null                                  |
 | registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
 | timeout                                    | server package timeout                                                               | 144 000                               |
 | public.disabled                            | Disable fallback feature for public packages                                         | false                                 |
@@ -171,10 +176,31 @@ public ones will show up just fine.
 > http://localhost:5678/
 
 ##Project
-Create .bowerrc file with content:
+Within your project, you will need to create a .bowerrc file containing the URL of your private bower server:
 ```json
 {
   "registry": "http://yourPrivateBowerRepo:5678",
+  "timeout": 300000
+}
+```
+
+If you are using private bower with `server.siteBaseURL` option, you need to add the same path the registry url in your .bowerrc file:
+
+Config
+```json
+{
+  "server": {
+    "port": 6789,
+    "hostName": "yourPrivateBowerRepo",
+    "setBaseURL": "/my-private-bower"
+  }
+}
+```
+
+.bowerrc
+```json
+{
+  "registry": "http://yourPrivateBowerRepo:6789/my-private-bower",
   "timeout": 300000
 }
 ```

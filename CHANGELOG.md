@@ -43,3 +43,10 @@
 
 - Added some documentation to clear up confusion regarding public registry. ([#184](https://github.com/Hacklone/private-bower/issues/184))
 - Show the git url of a package (as a link) ([#182](https://github.com/Hacklone/private-bower/issues/182))
+
+## 1.1.7 - 2015.12.02.
+
+- private-bower sometimes fails to refresh certain cached repositories ([#171](https://github.com/Hacklone/private-bower/issues/171))
+- Support unvalued options for git/svn daemons. ([#200](https://github.com/Hacklone/private-bower/issues/200))
+- Avoid https error on the website  ([#191](https://github.com/Hacklone/private-bower/issues/191))
+- Several fixes by @royrico
