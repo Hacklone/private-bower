@@ -82,7 +82,7 @@ Must be a valid JSON
     "server": {
         "port": 5678,
         "hostName": null,
-        "siteBaseUrl": null,
+        "siteBaseUrl": null
     },
     "public": {
         "disabled": false,
