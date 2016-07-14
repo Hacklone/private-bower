@@ -103,8 +103,9 @@ Must be a valid JSON
             "host": "localhost",
             "port": 6789,
             "protocol": "git",
-            "publicAccessURL" : null,
-            "refreshTimeout": 10
+            "publicAccessURL": null,
+            "refreshTimeout": 10,
+            "refreshDisabled": false
         },
         "svn": {
             "enabled": false,
@@ -112,21 +113,22 @@ Must be a valid JSON
             "host": "localhost",
             "port": 7891,
             "protocol": "svn",
-            "publicAccessURL" : null,
-            "refreshTimeout": 10
+            "publicAccessURL": null,
+            "refreshTimeout": 10,
+            "refreshDisabled": false
         }
     },
     "proxySettings" : {
         "enabled": false,
         "host": "proxy",
         "username": "name",
-        "password" : "pass",
+        "password": "pass",
         "port": 8080,
         "tunnel": false
     },
     "log4js" : {
         "enabled": false,
-        "configPath" : "log4js.conf.json"
+        "configPath": "log4js.conf.json"
     }
 }
 ```
@@ -137,7 +139,7 @@ Must be a valid JSON
 | server.hostName                            | Host name on which the private bower server will listen                              | null (process.env.IP if set)          |
 | server.siteBaseUrl                         | Load private bower server on a specific path, useful for using a reverse proxy       | null                                  |
 | registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
-| timeout                                    | server package timeout                                                               | 144 000                               |
+| timeout                                    | Server package timeout                                                               | 144 000                               |
 | public.disabled                            | Disable fallback feature for public packages                                         | false                                 |
 | public.registry                            | Public bower registry's url                                                          | http://bower.herokuapp.com/packages/  |
 | public.registryFile                        | File for persisting public packages (must be a valid json)                           | ./bowerRepositoryPublic.json          |
@@ -152,7 +154,8 @@ Must be a valid JSON
 | repositoryCache.(svn, git).protocol        | Protocol the mirrored repositories will use                                          | git, svn, https, http                 |
 | repositoryCache.(svn, git).publicAccessURL | Public address to access repository cache (useful if repository is behind an apache) | null                                  |
 | repositoryCache.(svn, git).cacheDirectory  | Directory where the public repository cache will save repositories                   | ./svnRepoCache, ./gitRepoCache        |
-| repositoryCache.(svn, git).refreshTimeout  | Time to wai between repository cache refresh (minutes)                               | 10 minutes                            |
+| repositoryCache.(svn, git).refreshTimeout  | Time to wait between repository cache refresh (minutes)                              | 10 minutes                            |
+| repositoryCache.(svn, git).refreshDisabled | Disable automatic updates of the cached repository source code                       | false                                 |
 | repositoryCache.(svn, git).parameters.X    | Custom parameters for git-daemon and svnserve                                        | undefined                             |
 | proxySettings.enabled                      | Enable the proxy, use the proxy to call the bower remote repo                        | false                                 |
 | proxySettings.host                         | Proxy host                                                                           | proxy                                 |
