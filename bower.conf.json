@@ -26,6 +26,7 @@
             "port": 6789,
             "protocol": "git",
             "publicAccessURL": null,
+            "refreshDisabled": false,
             "refreshTimeout": 10,
             "parameters": {
                 "timeout": 60000,
@@ -39,6 +40,7 @@
             "port": 7891,
             "protocol": "svn",
             "publicAccessURL": null,
+            "refreshDisabled": false,
             "refreshTimeout": 10
         }
     },
