@@ -17,7 +17,7 @@ module.exports = function() {
 
         copyConfig();
 
-        startServer();
+        return startServer();
 
         function createSandbox() {
             if(!fs.existsSync(sandboxPath)) {
@@ -44,7 +44,7 @@ module.exports = function() {
         function startServer() {
             server = Server();
 
-            server.start(configPath);
+            return server.start(configPath);
         }
     }
 

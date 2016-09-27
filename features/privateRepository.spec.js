@@ -5,7 +5,7 @@ var utils = require('./assets/utils');
 var tools = require('./assets/tools');
 var Server = require('./assets/server');
 
-describe('PrivateRepository', function() {
+describe.skip('PrivateRepository', function() {
     var _server;
 
     beforeEach(function() {

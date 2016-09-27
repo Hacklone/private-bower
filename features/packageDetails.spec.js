@@ -7,7 +7,7 @@ var Server = require('./assets/server');
 
 var Promise = require('bluebird');
 
-describe.only('PackageDetails', function() {
+describe.skip('PackageDetails', function() {
     var _server;
 
     beforeEach(function() {

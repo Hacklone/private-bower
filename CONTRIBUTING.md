@@ -19,6 +19,5 @@
 > If you can please try to fix the issue and submit a Pull Request
 
 ## Submitting Pull Requests
-- Direct the pull request to the next version's branch
 - Please try to write self documenting code instead of commenting
 - The commit message should contain a understandable description of what the commit fixes/adds
