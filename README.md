@@ -40,7 +40,7 @@ Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href
 - [Tips for usage](#tips-for-usage)
 - [Contributing](#contributing)
 
-#Features
+# Features
 
 *   Register private packages
 *   Fallback to public packages
@@ -52,7 +52,7 @@ Twitter: <a href="https://twitter.com/private_bower">@private_bower</a>, <a href
 *   Blacklist public packages
 *   Whitelist public packages
 
-#Installation
+# Installation
 
 Install
 > npm install -g private-bower
@@ -65,14 +65,14 @@ Run with config file specified
 
 If there's no private package with requested package name the servers calls through to the public bower registry.
 
-#Parameters
+# Parameters
 
 | name       | description                                    |
 |------------|------------------------------------------------|
 | --help     | print out help                                 |
 | --config   | path to config file (Must be a valid json)     |
 
-#Config file
+# Config file
 
 Must be a valid JSON
 ```javascript
@@ -169,16 +169,16 @@ Must be a valid JSON
 
 
 
-#Usage
+# Usage
 
-##Web interface
+## Web interface
 Convenient way for viewing your packages in a browser.  The web interface will only list your private packages, it will 
 not list the public packages if you have a public registry enabled.  However, when searching for packages in bower, the 
 public ones will show up just fine.
    
 > http://localhost:5678/
 
-##Project
+## Project
 Within your project, you will need to create a .bowerrc file containing the URL of your private bower server:
 ```json
 {
@@ -208,14 +208,14 @@ Config
 }
 ```
 
-##List packages
+## List packages
 GET
 > bower-server:5678/packages
 
-##Search packages
+## Search packages
 > bower search \[packageName\]
 
-##Register package
+## Register package
 > bower register \[packageName\] \[gitRepo\]
 
 or
@@ -230,31 +230,31 @@ POST
 
 > { "url": "git://repoPath" }
 
-##Register packages
+## Register packages
 POST
 > bower-server:5678/packages
 
 > [ { "name": "package-name", "url": "git://repoPath" } ]
 
-##Remove package
+## Remove package
 DELETE
 > bower-server:5678/packages/\<package name\>
 
-##Remove packages
+## Remove packages
 DELETE
 > bower-server:5678/packages
 
 > ["package-name"]
 
-##Restart server
+## Restart server
 POST
 > bower-server:5678/restart
 
-##Refresh caches
+## Refresh caches
 POST
 > bower-server:5678/refresh
 
-##Authentication
+## Authentication
 
 Authentication can be enabled for the following features:
 *   Register package
@@ -267,7 +267,7 @@ Add ```Auth-Key``` header to request.
 > Auth-Key = password
 
 
-##Log4js configuration
+## Log4js configuration
 >There are two appenders set in the example configuration.
 >You need to remove one of the two if you want to use it.
 >fileDate appender will write the log to a file which will be rotated daily.
@@ -275,21 +275,21 @@ Add ```Auth-Key``` header to request.
 >You need to set the replaceConsole to true if you want to write the logging to the log4j appenders.
 >See github.com/nomiddlename/log4js-node for more information
 
-#Tips for usage
-##Server as a service
+# Tips for usage
+## Server as a service
 - [Installing on Ubuntu](https://github.com/Hacklone/private-bower/wiki/Installing%20on%20Ubuntu)
 - [Install as a Windows service](https://github.com/Hacklone/private-bower/wiki/Install%20as%20a%20Windows%20service)
 
-##Use behind proxy
+## Use behind proxy
 > git config --global url."https://".insteadOf git://
 
-##Calling the API
+## Calling the API
 - do not forget to set the ```Content-Type``` header to ```application/json```
 
-#Contributing
+# Contributing
 Please read the rules of contributing on the [contribution page](https://github.com/Hacklone/private-bower/blob/master/CONTRIBUTING.md).
 
-#License
+# License
 > The MIT License (MIT)
 
 > Copyright (c) 2014 Hacklone
