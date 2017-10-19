@@ -8,7 +8,7 @@
     },
     "public": {
         "disabled": false,
-        "registry": "https://bower.herokuapp.com/packages",
+        "registry": "https://registry.bower.io/packages",
         "registryFile": "./bowerRepositoryPublic.json",
         "whitelist": [],
         "blacklist": []
