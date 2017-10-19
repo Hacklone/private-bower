@@ -141,7 +141,7 @@ Must be a valid JSON
 | registryFile                               | File for persisting private packages (must be a valid json)                          | ./bowerRepository.json                |
 | timeout                                    | Server package timeout                                                               | 144 000                               |
 | public.disabled                            | Disable fallback feature for public packages                                         | false                                 |
-| public.registry                            | Public bower registry's url                                                          | http://bower.herokuapp.com/packages/  |
+| public.registry                            | Public bower registry's url                                                          | https://registry.bower.io  |
 | public.registryFile                        | File for persisting public packages (must be a valid json)                           | ./bowerRepositoryPublic.json          |
 | public.whitelist                           | Define public packages that are allowed to be installed                              | \[\]                                  |
 | public.blacklist                           | Define public packages that are not allowed to be installed                          | \[\]                                  |
