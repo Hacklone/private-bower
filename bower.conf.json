@@ -55,5 +55,6 @@
     "log4js" : {
         "enabled": false,
         "configPath" : "log4js.conf.json"
-    }
+    },
+    "repositoryTFS" : false
 }
