@@ -86,7 +86,7 @@ Must be a valid JSON
     },
     "public": {
         "disabled": false,
-        "registry": "http://bower.herokuapp.com/packages",
+        "registry": "https://registry.bower.io",
         "registryFile": "./bowerRepositoryPublic.json",
         "whitelist": [],
         "blacklist": []
